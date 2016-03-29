@@ -34,6 +34,18 @@ class GameScene: SKScene {
         */
     }
     
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        
+        let touch = touches.anyObject() as! UITouch
+        
+        let touchLocation = touch.locationInNode(self)
+        
+        if([button containsPoint: touchLocation])
+        {
+            //sprite contains touch
+        }
+    }
+    
     func random() -> CGFloat {
         return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
     }
@@ -74,6 +86,9 @@ class GameScene: SKScene {
         
         // Position the button
         button.position = CGPoint(x: size.width/2, y: size.height/2)
+        
+        button.name = "good"
+        button.userInteractionEnabled = false
         
         // Add the button to the scene
         addChild(button)
