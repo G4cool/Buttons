@@ -15,7 +15,8 @@
 		8162C42A1CAAC4DF00735CFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8162C4281CAAC4DF00735CFF /* LaunchScreen.storyboard */; };
 		8162C4351CAAC4DF00735CFF /* ButtonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162C4341CAAC4DF00735CFF /* ButtonsTests.swift */; };
 		8162C4401CAAC4DF00735CFF /* ButtonsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162C43F1CAAC4DF00735CFF /* ButtonsUITests.swift */; };
-		8162C44E1CAAC74800735CFF /* SpriteKitSimpleGameResources in Resources */ = {isa = PBXBuildFile; fileRef = 8162C44D1CAAC74800735CFF /* SpriteKitSimpleGameResources */; };
+		8162C4521CAAC80D00735CFF /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8162C4511CAAC80D00735CFF /* sprites.atlas */; };
+		8162C4561CAAC83C00735CFF /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 8162C4551CAAC83C00735CFF /* Sounds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,8 @@
 		8162C43B1CAAC4DF00735CFF /* ButtonsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButtonsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8162C43F1CAAC4DF00735CFF /* ButtonsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsUITests.swift; sourceTree = "<group>"; };
 		8162C4411CAAC4DF00735CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8162C44D1CAAC74800735CFF /* SpriteKitSimpleGameResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SpriteKitSimpleGameResources; sourceTree = "<group>"; };
+		8162C4511CAAC80D00735CFF /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
+		8162C4551CAAC83C00735CFF /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,6 @@
 				8162C4331CAAC4DF00735CFF /* ButtonsTests */,
 				8162C43E1CAAC4DF00735CFF /* ButtonsUITests */,
 				8162C4191CAAC4DE00735CFF /* Products */,
-				8162C44D1CAAC74800735CFF /* SpriteKitSimpleGameResources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +110,8 @@
 				8162C4261CAAC4DF00735CFF /* Assets.xcassets */,
 				8162C4281CAAC4DF00735CFF /* LaunchScreen.storyboard */,
 				8162C42B1CAAC4DF00735CFF /* Info.plist */,
+				8162C4551CAAC83C00735CFF /* Sounds */,
+				8162C4511CAAC80D00735CFF /* sprites.atlas */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -235,9 +238,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8162C4561CAAC83C00735CFF /* Sounds in Resources */,
+				8162C4521CAAC80D00735CFF /* sprites.atlas in Resources */,
 				8162C42A1CAAC4DF00735CFF /* LaunchScreen.storyboard in Resources */,
 				8162C4271CAAC4DF00735CFF /* Assets.xcassets in Resources */,
-				8162C44E1CAAC74800735CFF /* SpriteKitSimpleGameResources in Resources */,
 				8162C4251CAAC4DF00735CFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
