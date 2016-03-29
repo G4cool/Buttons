@@ -20,6 +20,13 @@ class GameScene: SKScene {
         player.position = CGPoint(x: size.width * 0.1, y: size.height * 0.5)
         // 4
         addChild(player)
+        
+        runAction(SKAction.repeatActionForever(
+            SKAction.sequence([
+                SKAction.runBlock(addMonster),
+                SKAction.waitForDuration(1.0)
+            ])
+        ))
     }
     
     func random() -> CGFloat {
