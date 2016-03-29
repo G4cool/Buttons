@@ -70,7 +70,7 @@ class GameScene: SKScene {
     func addButton() {
         
         // Create a button
-        let button = SKSpriteNode(color:SKColor.blackColor(),size:CGSize(width: size.width - 10,height: size.height - 10))
+        let button = SKSpriteNode(color:SKColor.blueColor(),size:CGSize(width: size.width - 10,height: size.height - 10))
         
         // Position the button
         button.position = CGPoint(x: size.width/2, y: size.height/2)
