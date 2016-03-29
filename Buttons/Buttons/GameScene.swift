@@ -12,6 +12,7 @@ class GameScene: SKScene {
     
     // 1
     let player = SKSpriteNode(imageNamed: "player")
+    let buttonCount = 0
     
     override func didMoveToView(view: SKView) {
         // 2
@@ -59,6 +60,10 @@ class GameScene: SKScene {
         let actionMove = SKAction.moveTo(CGPoint(x: -monster.size.width/2, y: actualY), duration: NSTimeInterval(actualDuration))
         let actionMoveDone = SKAction.removeFromParent()
         monster.runAction(SKAction.sequence([actionMove, actionMoveDone]))
+        
+    }
+    
+    func addButton() {
         
     }
 }
