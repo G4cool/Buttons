@@ -11,23 +11,27 @@ import SpriteKit
 class GameScene: SKScene {
     
     // 1
-    let player = SKSpriteNode(imageNamed: "player")
-    let buttonCount = 0
+    //let player = SKSpriteNode(imageNamed: "player")
+    let buttonCount = 1
     
     override func didMoveToView(view: SKView) {
-        // 2
-        backgroundColor = SKColor.whiteColor()
-        // 3
-        player.position = CGPoint(x: size.width * 0.1, y: size.height * 0.5)
-        // 4
-        addChild(player)
         
+        backgroundColor = SKColor.whiteColor()
+        
+        //player.position = CGPoint(x: size.width * 0.1, y: size.height * 0.5)
+        
+        //addChild(player)
+        
+        addButton()
+        
+        /*
         runAction(SKAction.repeatActionForever(
             SKAction.sequence([
                 SKAction.runBlock(addMonster),
                 SKAction.waitForDuration(1.0)
             ])
         ))
+        */
     }
     
     func random() -> CGFloat {
@@ -64,6 +68,15 @@ class GameScene: SKScene {
     }
     
     func addButton() {
+        
+        // Create a button
+        let button = SKSpriteNode(color:SKColor.blackColor(),size:CGSize(width: size.width - 10,height: size.height - 10))
+        
+        // Position the button
+        button.position = CGPoint(x: size.width/2, y: size.height/2)
+        
+        // Add the button to the scene
+        addChild(button)
         
     }
 }
