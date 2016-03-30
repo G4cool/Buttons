@@ -23,7 +23,7 @@ class GameScene: SKScene {
         
         //addChild(player)
         for _ in 1...2 {
-            addButton(CGFloat((buttonCount - 1)))
+            addButton((buttonCount - 1))
             buttonCount += 1
         }
         
@@ -84,13 +84,13 @@ class GameScene: SKScene {
         
     }
     
-    func addButton(buttonCount: CGFloat) {
+    func addButton(buttonCount: Int) {
         
         // Create a button
         let button = SKSpriteNode(color:SKColor.blueColor(),size:CGSize(width: size.width - 10,height: ((size.height - 10)/2)))
         
         // Position the button
-        button.position = CGPoint(x: size.width/2, y: ((size.height/2) + (buttonCount * (size.height/4))))
+        button.position = CGPoint(x: size.width/2, y: ((size.height/2) + (CGFloat(2 * buttonCount) * (size.height/4))))
         
         button.name = "good"
         button.userInteractionEnabled = false
