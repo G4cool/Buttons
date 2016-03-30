@@ -96,7 +96,7 @@ class GameScene: SKScene {
         
         // Created rounded corners and position button
         //button.path = UIBezierPath(roundedRect: CGRect(x: 0, y: -64, width: (size.width - 10), height: ((size.height - 10)/(CGFloat(buttonTotal)))), cornerRadius: 64).CGPath
-        let yPos = (((size.height - 10)/(CGFloat(buttonTotal))) + (CGFloat(2 * buttonCount) * (size.height/(CGFloat(2 * buttonTotal)))))
+        let yPos = (((size.height - 10)/(CGFloat(buttonTotal))) + (CGFloat(2 * buttonCount) * ((size.height/(CGFloat(2 * buttonTotal))) + 1.5)))
         button.path = UIBezierPath(roundedRect: CGRect(x: 5, y: size.height - 5 - yPos, width: size.width - 10, height: ((size.height - 10)/(CGFloat(buttonTotal)))), cornerRadius: 4).CGPath
         
         // Coloring and design
