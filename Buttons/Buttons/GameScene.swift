@@ -14,7 +14,6 @@ class GameScene: SKScene {
     //let player = SKSpriteNode(imageNamed: "player")
     var buttonTotal = 2
     var buttonCount = 1
-    let button = SKShapeNode()
     
     override func didMoveToView(view: SKView) {
         
@@ -23,12 +22,10 @@ class GameScene: SKScene {
         //player.position = CGPoint(x: size.width * 0.1, y: size.height * 0.5)
         
         //addChild(player)
-        /*
         for _ in 1...buttonTotal {
             addButton((buttonCount - 1), buttonTotal: buttonTotal)
             buttonCount += 1
         }
-        */
         
         /*
         runAction(SKAction.repeatActionForever(
@@ -42,12 +39,10 @@ class GameScene: SKScene {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch: AnyObject in touches {
-            
-            // detect touch in the scene
             let location = touch.locationInNode(self)
+            let touchedNode = self.nodeAtPoint(location)
             
-            // check if circlenode has been touched
-            if self.button.containsPoint(location) {
+            if touchedNode.name == "good" {
                 print("yes")
             } else {
                 print("no")
@@ -116,7 +111,7 @@ class GameScene: SKScene {
         
         // Create a button
         //let button = SKShapeNode(color:customColor,size:CGSize(width: size.width - 10,height: ((size.height - 10)/(CGFloat(buttonTotal)))))
-        //let button = SKShapeNode()
+        let button = SKShapeNode()
         
         // Created rounded corners and position button
         //button.path = UIBezierPath(roundedRect: CGRect(x: 0, y: -64, width: (size.width - 10), height: ((size.height - 10)/(CGFloat(buttonTotal)))), cornerRadius: 64).CGPath
