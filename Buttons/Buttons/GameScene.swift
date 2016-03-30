@@ -12,8 +12,8 @@ class GameScene: SKScene {
     
     // 1
     //let player = SKSpriteNode(imageNamed: "player")
-    let buttonTotal = 2
-    let buttonCount = 1
+    var buttonTotal = 2
+    var buttonCount = 1
     
     override func didMoveToView(view: SKView) {
         
@@ -22,9 +22,10 @@ class GameScene: SKScene {
         //player.position = CGPoint(x: size.width * 0.1, y: size.height * 0.5)
         
         //addChild(player)
-        //for _ in 1...2 {
-            addButton()
-        //}
+        for _ in 1...2 {
+            addButton(CGFloat((buttonCount - 1)))
+            buttonCount += 1
+        }
         
         /*
         runAction(SKAction.repeatActionForever(
@@ -83,13 +84,13 @@ class GameScene: SKScene {
         
     }
     
-    func addButton() {
+    func addButton(buttonCount: CGFloat) {
         
         // Create a button
         let button = SKSpriteNode(color:SKColor.blueColor(),size:CGSize(width: size.width - 10,height: ((size.height - 10)/2)))
         
         // Position the button
-        button.position = CGPoint(x: size.width/2, y: ((size.height/2) + size.height/4))
+        button.position = CGPoint(x: size.width/2, y: ((size.height/2) + (buttonCount * (size.height/4))))
         
         button.name = "good"
         button.userInteractionEnabled = false
