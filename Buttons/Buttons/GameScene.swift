@@ -87,7 +87,8 @@ class GameScene: SKScene {
     func addButton(buttonCount: Int, buttonTotal: Int) {
         
         // Creat color
-        let customColor = UIColor(red: 1, green: 108/255, blue: 0, alpha: 1)
+        let customFillColor = UIColor(red: 1, green: 108/255, blue: 0, alpha: 1)
+        let customStrokeColor = UIColor(red: 178/255, green: 75/255, blue: 0, alpha: 1)
         
         // Create a button
         //let button = SKShapeNode(color:customColor,size:CGSize(width: size.width - 10,height: ((size.height - 10)/(CGFloat(buttonTotal)))))
@@ -95,11 +96,11 @@ class GameScene: SKScene {
         
         // Created rounded corners and position button
         //button.path = UIBezierPath(roundedRect: CGRect(x: 0, y: -64, width: (size.width - 10), height: ((size.height - 10)/(CGFloat(buttonTotal)))), cornerRadius: 64).CGPath
-        button.path = UIBezierPath(roundedRect: CGRect(x: 5, y: size.height - 5 - ((size.height - 10)/(CGFloat(buttonTotal))), width: size.width - 10, height: ((size.height - 10)/(CGFloat(buttonTotal)))), cornerRadius: 16).CGPath
+        button.path = UIBezierPath(roundedRect: CGRect(x: 5, y: size.height - 5 - ((size.height - 10)/(CGFloat(buttonTotal))), width: size.width - 10, height: ((size.height - 10)/(CGFloat(buttonTotal)))), cornerRadius: 4).CGPath
         
         // Coloring
-        button.fillColor = customColor
-        button.strokeColor = customColor
+        button.fillColor = customFillColor
+        button.strokeColor = customStrokeColor
         
         // Position the button
         //button.position = CGPoint(x: size.width/2, y: ((size.height/(CGFloat(buttonTotal))) + (CGFloat(2 * buttonCount) * (size.height/(CGFloat(2 * buttonTotal)))) - size.height/(CGFloat(2 * buttonTotal))))
