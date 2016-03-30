@@ -90,7 +90,7 @@ class GameScene: SKScene {
         let button = SKSpriteNode(color:SKColor.blueColor(),size:CGSize(width: size.width - 10,height: ((size.height - 10)/2)))
         
         // Position the button
-        button.position = CGPoint(x: size.width/2, y: ((size.height/2) + (CGFloat(2 * buttonCount) * (size.height/4))))
+        button.position = CGPoint(x: size.width/2, y: ((size.height/2) + (CGFloat(2 * buttonCount) * (size.height/4)) - size.height/4))
         
         button.name = "good"
         button.userInteractionEnabled = false
