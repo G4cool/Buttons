@@ -86,8 +86,11 @@ class GameScene: SKScene {
     
     func addButton(buttonCount: Int, buttonTotal: Int) {
         
+        // Creat color
+        let customColor = UIColor(red: 1, green: 108/255, blue: 0, alpha: 1)
+        
         // Create a button
-        let button = SKSpriteNode(color:SKColor.blueColor(),size:CGSize(width: size.width - 10,height: ((size.height - 10)/(CGFloat(buttonTotal)))))
+        let button = SKSpriteNode(color:customColor,size:CGSize(width: size.width - 10,height: ((size.height - 10)/(CGFloat(buttonTotal)))))
         
         // Position the button
         button.position = CGPoint(x: size.width/2, y: ((size.height/(CGFloat(buttonTotal))) + (CGFloat(2 * buttonCount) * (size.height/(CGFloat(2 * buttonTotal)))) - size.height/(CGFloat(2 * buttonTotal))))
