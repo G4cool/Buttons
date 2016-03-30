@@ -94,14 +94,16 @@ class GameScene: SKScene {
         let button = SKShapeNode()
         
         // Created rounded corners
-        button.path = UIBezierPath(roundedRect: CGRect(x: 0, y: -64, width: (size.width - 10), height: ((size.height - 10)/(CGFloat(buttonTotal)))), cornerRadius: 64).CGPath
+        //button.path = UIBezierPath(roundedRect: CGRect(x: 0, y: -64, width: (size.width - 10), height: ((size.height - 10)/(CGFloat(buttonTotal)))), cornerRadius: 64).CGPath
+        button.path = UIBezierPath(roundedRect: CGRect(x: -128, y: -128, width: 256, height: 100), cornerRadius: 16).CGPath
         
         // Coloring
         button.fillColor = customColor
         button.strokeColor = customColor
         
         // Position the button
-        button.position = CGPoint(x: size.width/2, y: ((size.height/(CGFloat(buttonTotal))) + (CGFloat(2 * buttonCount) * (size.height/(CGFloat(2 * buttonTotal)))) - size.height/(CGFloat(2 * buttonTotal))))
+        //button.position = CGPoint(x: size.width/2, y: ((size.height/(CGFloat(buttonTotal))) + (CGFloat(2 * buttonCount) * (size.height/(CGFloat(2 * buttonTotal)))) - size.height/(CGFloat(2 * buttonTotal))))
+        button.position = CGPoint(x: size.width/2, y: ((size.height/(CGFloat(buttonTotal))) + (CGFloat(2 * buttonCount) * (size.height/(CGFloat(2 * buttonTotal))))))
         
         button.name = "good"
         button.userInteractionEnabled = false
