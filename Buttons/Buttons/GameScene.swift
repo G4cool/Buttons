@@ -16,12 +16,12 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         
         // Randomly generate number for picking which button is good
-        let rand = random(min: CGFloat(1.0), max: CGFloat(buttonTotal))
+        let rand = randRange(1, upper: buttonTotal)
         
         backgroundColor = SKColor.whiteColor()
         
         for _ in 1...buttonTotal {
-            addButton((buttonCount - 1), buttonTotal: buttonTotal)
+            addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
             buttonCount += 1
         }
     }
@@ -47,7 +47,11 @@ class GameScene: SKScene {
         return random() * (max - min) + min
     }
     
-    func addButton(buttonCount: Int, buttonTotal: Int) {
+    func randRange (lower: Int , upper: Int) -> Int {
+        return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
+    }
+    
+    func addButton(buttonCount: Int, buttonTotal: Int, rand: CGFloat) {
         
         // Creat color
         let customFillColor = UIColor(red: 1, green: 108/255, blue: 0, alpha: 1)
@@ -67,7 +71,14 @@ class GameScene: SKScene {
         button.lineWidth = 3
         
         // Define some properties
-        button.name = "good"
+        if CGFloat((buttonCount + 1)) == rand {
+            button.name = "good"
+        } else {
+            button.name = "bad"
+        }
+        print(rand)
+        print(buttonCount + 1)
+        print(button.name)
         button.userInteractionEnabled = false
         
         // Add the button to the scene
