@@ -95,7 +95,7 @@ class GameScene: SKScene {
         
         // Created rounded corners
         //button.path = UIBezierPath(roundedRect: CGRect(x: 0, y: -64, width: (size.width - 10), height: ((size.height - 10)/(CGFloat(buttonTotal)))), cornerRadius: 64).CGPath
-        button.path = UIBezierPath(roundedRect: CGRect(x: -128, y: -128, width: 256, height: 100), cornerRadius: 16).CGPath
+        button.path = UIBezierPath(roundedRect: CGRect(x: -256, y: -128, width: size.width - 10, height: 100), cornerRadius: 16).CGPath
         
         // Coloring
         button.fillColor = customColor
