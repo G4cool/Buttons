@@ -12,8 +12,9 @@ class GameScene: SKScene {
     
     // 1
     //let player = SKSpriteNode(imageNamed: "player")
-    var buttonTotal = 50
+    var buttonTotal = 2
     var buttonCount = 1
+    let button = SKShapeNode()
     
     override func didMoveToView(view: SKView) {
         
@@ -22,10 +23,12 @@ class GameScene: SKScene {
         //player.position = CGPoint(x: size.width * 0.1, y: size.height * 0.5)
         
         //addChild(player)
+        /*
         for _ in 1...buttonTotal {
             addButton((buttonCount - 1), buttonTotal: buttonTotal)
             buttonCount += 1
         }
+        */
         
         /*
         runAction(SKAction.repeatActionForever(
@@ -37,9 +40,30 @@ class GameScene: SKScene {
         */
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        for touch: AnyObject in touches {
+            
+            // detect touch in the scene
+            let location = touch.locationInNode(self)
+            
+            // check if circlenode has been touched
+            if self.button.containsPoint(location) {
+                print("yes")
+            } else {
+                print("no")
+            }
+        }
+        /*
+         if let touch = touches.first {
+            // ...
+         }
+         super.touchesBegan(touches, withEvent:event)
+         */
+    }
+    
     /*
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        
+     
         let touch = touches.anyObject() as! UITouch
         
         let touchLocation = touch.locationInNode(self)
@@ -92,7 +116,7 @@ class GameScene: SKScene {
         
         // Create a button
         //let button = SKShapeNode(color:customColor,size:CGSize(width: size.width - 10,height: ((size.height - 10)/(CGFloat(buttonTotal)))))
-        let button = SKShapeNode()
+        //let button = SKShapeNode()
         
         // Created rounded corners and position button
         //button.path = UIBezierPath(roundedRect: CGRect(x: 0, y: -64, width: (size.width - 10), height: ((size.height - 10)/(CGFloat(buttonTotal)))), cornerRadius: 64).CGPath
