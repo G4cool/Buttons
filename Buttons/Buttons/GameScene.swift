@@ -12,7 +12,7 @@ class GameScene: SKScene {
     
     // 1
     //let player = SKSpriteNode(imageNamed: "player")
-    var buttonTotal = 2
+    var buttonTotal = 3
     var buttonCount = 1
     
     override func didMoveToView(view: SKView) {
