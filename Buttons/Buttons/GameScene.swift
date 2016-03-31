@@ -10,11 +10,11 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    var buttonTotal = 2
+    var buttonTotal = 1
     var buttonCount = 1
     var shapeNodes : [SKShapeNode] = []
     var correct = false
-    var guessed = true
+    var guessed = false
     
     override func didMoveToView(view: SKView) {
         
@@ -24,28 +24,15 @@ class GameScene: SKScene {
         backgroundColor = SKColor.whiteColor()
         
         // Repeat
-        /*
-        runAction(SKAction.repeatActionForever(
-            SKAction.sequence([
-                SKAction.runBlock(addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand)))
-            ])
-        ))
-        */
         
-        while true {
-            if guessed == true {
-                
-                guessed = false
-                for _ in 1...buttonTotal {
-                    addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
-                    buttonCount += 1
-                }
-            }
+        for _ in 1...buttonTotal {
+            addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
+            buttonCount += 1
         }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        print("screen touched")
+        
         // Check if valid
         if guessed == false {
             // Identify touch
@@ -76,11 +63,14 @@ class GameScene: SKScene {
             guessed = true
             buttonTotal += 1
             
+            /*
             // Remove the SKShapeNodes
             for node in shapeNodes {
                 node.removeFromParent()
             }
+            // Check keepCapacity
             shapeNodes.removeAll(keepCapacity: false)
+            */
             buttonCount = 1
             correct = false
         }
@@ -99,40 +89,38 @@ class GameScene: SKScene {
     }
     
     func addButton(buttonCount: Int, buttonTotal: Int, rand: CGFloat) {
-        print("adding buttons")
-        //for _ in 1...buttonTotal {
-            // Creat color
-            let customFillColor = UIColor(red: 1, green: 108/255, blue: 0, alpha: 1)
-            let customStrokeColor = UIColor(red: 178/255, green: 75/255, blue: 0, alpha: 1)
-            
-            // Create a button
-            let button = SKShapeNode()
-            
-            // Created rounded corners and position button
-            let spacingFactor = CGFloat(4.5)/CGFloat(buttonTotal)
-            let yPos = (((size.height - 10)/(CGFloat(buttonTotal))) + (CGFloat(2 * buttonCount) * ((size.height/(CGFloat(2 * buttonTotal))) - spacingFactor)))
-            button.path = UIBezierPath(roundedRect: CGRect(x: 5, y: size.height - 5 - yPos, width: size.width - 10, height: ((size.height - 10)/(CGFloat(buttonTotal)) - (spacingFactor * CGFloat(buttonTotal)))), cornerRadius: 4).CGPath
-            
-            // Coloring and design
-            button.fillColor = customFillColor
-            button.strokeColor = customStrokeColor
-            button.lineWidth = 3
-            
-            // Define some properties
-            if CGFloat((buttonCount + 1)) == rand {
-                button.name = "good"
-            } else {
-                button.name = "bad"
-            }
-            print(rand)
-            print(buttonCount + 1)
-            print(button.name)
-            button.userInteractionEnabled = false
-            
-            // Add the button to the array and to the scene
-            shapeNodes.append(button)
-            addChild(button)
-            print("rendering")
-        //}
+        
+        // Creat color
+        let customFillColor = UIColor(red: 1, green: 108/255, blue: 0, alpha: 1)
+        let customStrokeColor = UIColor(red: 178/255, green: 75/255, blue: 0, alpha: 1)
+        
+        // Create a button
+        let button = SKShapeNode()
+        
+        // Created rounded corners and position button
+        let spacingFactor = CGFloat(4.5)/CGFloat(buttonTotal)
+        let yPos = (((size.height - 10)/(CGFloat(buttonTotal))) + (CGFloat(2 * buttonCount) * ((size.height/(CGFloat(2 * buttonTotal))) - spacingFactor)))
+        button.path = UIBezierPath(roundedRect: CGRect(x: 5, y: size.height - 5 - yPos, width: size.width - 10, height: ((size.height - 10)/(CGFloat(buttonTotal)) - (spacingFactor * CGFloat(buttonTotal)))), cornerRadius: 4).CGPath
+        
+        // Coloring and design
+        button.fillColor = customFillColor
+        button.strokeColor = customStrokeColor
+        button.lineWidth = 3
+        
+        // Define some properties
+        if CGFloat((buttonCount + 1)) == rand {
+            button.name = "good"
+        } else {
+            button.name = "bad"
+        }
+        print(rand)
+        print(buttonCount + 1)
+        print(button.name)
+        button.userInteractionEnabled = false
+        
+        // Add the button to the array and to the scene
+        shapeNodes.append(button)
+        addChild(button)
+        
     }
 }
