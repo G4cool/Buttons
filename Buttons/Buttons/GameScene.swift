@@ -30,6 +30,8 @@ class GameScene: SKScene {
             addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
             buttonCount += 1
         }
+        // Delay (for now, change later)
+        sleep(2)
         removeNodes()
     }
     
@@ -67,14 +69,13 @@ class GameScene: SKScene {
             buttonCount = 1
             correct = false
             needDelete = true
-            
-            // Delay (for now, change later)
-            sleep(2)
         }
     }
     
     func removeNodes() {
+        print("hi")
         if needDelete == true {
+            print("needs deleting")
             // Remove the SKShapeNodes
             for node in shapeNodes {
                 node.removeFromParent()
