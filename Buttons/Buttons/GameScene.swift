@@ -16,11 +16,12 @@ class GameScene: SKScene {
     var correct = false
     var guessed = false
     var needDelete = false
+    var rand = 0
     
     override func didMoveToView(view: SKView) {
         
         // Randomly generate number for picking which button is good
-        let rand = randRange(1, upper: buttonTotal)
+        rand = randRange(1, upper: buttonTotal)
         
         backgroundColor = SKColor.whiteColor()
         
@@ -31,7 +32,6 @@ class GameScene: SKScene {
                     addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
                     buttonCount += 1
                 }
-                buttonTotal += 1
                 needDelete = true
             }
         //}
@@ -81,6 +81,17 @@ class GameScene: SKScene {
         
         // Remove the SKShapeNodes
         removeNodes()
+        
+        buttonCount = 1
+        
+        if needDelete == false {
+            for _ in 1...buttonTotal {
+                addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
+                buttonCount += 1
+            }
+            buttonTotal += 1
+            needDelete = true
+        }
     }
     
     func removeNodes() {
