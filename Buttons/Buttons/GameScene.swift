@@ -32,9 +32,7 @@ class GameScene: SKScene {
         }
         // Delay (for now, change later)
         sleep(2)
-        while needDelete == false {
-        }
-        removeNodes()
+        //removeNodes()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -72,6 +70,15 @@ class GameScene: SKScene {
             correct = false
             needDelete = true
         }
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        // Delay
+        sleep(2)
+        
+        // Remove the SKShapeNodes
+        removeNodes()
     }
     
     func removeNodes() {
