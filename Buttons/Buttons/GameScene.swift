@@ -10,7 +10,7 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    var buttonTotal = 1
+    var buttonTotal = 2
     var buttonCount = 1
     var shapeNodes : [SKShapeNode] = []
     var correct = false
@@ -34,11 +34,12 @@ class GameScene: SKScene {
         
         while true {
             if guessed == true {
+                
+                guessed = false
                 for _ in 1...buttonTotal {
                     addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
                     buttonCount += 1
                 }
-                guessed = false
             }
         }
     }
@@ -131,7 +132,7 @@ class GameScene: SKScene {
             // Add the button to the array and to the scene
             shapeNodes.append(button)
             addChild(button)
-            
+            print("rendering")
         //}
     }
 }
