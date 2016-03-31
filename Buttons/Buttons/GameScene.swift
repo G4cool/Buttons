@@ -32,6 +32,8 @@ class GameScene: SKScene {
                     addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
                     buttonCount += 1
                 }
+                buttonTotal += 1
+                guessed = false
                 needDelete = true
             }
         //}
@@ -67,7 +69,6 @@ class GameScene: SKScene {
             }
             
             guessed = true
-            buttonTotal += 1
             buttonCount = 1
             correct = false
             needDelete = true
@@ -77,7 +78,7 @@ class GameScene: SKScene {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         // Delay (for now, change later)
-        sleep(2)
+        sleep(1)
         
         // Remove the SKShapeNodes
         removeNodes()
@@ -90,6 +91,8 @@ class GameScene: SKScene {
                 buttonCount += 1
             }
             buttonTotal += 1
+            rand = randRange(1, upper: buttonTotal)
+            guessed = false
             needDelete = true
         }
     }
