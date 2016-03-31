@@ -12,6 +12,8 @@ class GameScene: SKScene {
     
     var buttonTotal = 3
     var buttonCount = 1
+    var shapeNodes : [SKShapeNode] = []
+    var correct = false
     
     override func didMoveToView(view: SKView) {
         
@@ -33,9 +35,14 @@ class GameScene: SKScene {
             
             if touchedNode.name == "good" {
                 print("yes")
+                correct = true
             } else {
                 print("no")
+                correct = false
             }
+        }
+        for node in shapeNodes {
+            node.fillColor = UIColor(red: 11/255, green: 255)
         }
     }
     
@@ -81,7 +88,8 @@ class GameScene: SKScene {
         print(button.name)
         button.userInteractionEnabled = false
         
-        // Add the button to the scene
+        // Add the button to the array and to the scene
+        shapeNodes.append(button)
         addChild(button)
         
     }
