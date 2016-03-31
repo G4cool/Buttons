@@ -10,7 +10,7 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    var buttonTotal = 3
+    var buttonTotal = 1
     var buttonCount = 1
     var shapeNodes : [SKShapeNode] = []
     var correct = false
@@ -25,11 +25,16 @@ class GameScene: SKScene {
         backgroundColor = SKColor.whiteColor()
         
         // Repeat
-        
-        for _ in 1...buttonTotal {
-            addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
-            buttonCount += 1
-        }
+        //while true {
+            if needDelete == false {
+                for _ in 1...buttonTotal {
+                    addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
+                    buttonCount += 1
+                }
+                buttonTotal += 1
+                needDelete = true
+            }
+        //}
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
