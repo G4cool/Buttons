@@ -32,6 +32,8 @@ class GameScene: SKScene {
         }
         // Delay (for now, change later)
         sleep(2)
+        while needDelete == true {
+        }
         removeNodes()
     }
     
