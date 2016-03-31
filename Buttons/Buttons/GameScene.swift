@@ -42,7 +42,13 @@ class GameScene: SKScene {
             }
         }
         for node in shapeNodes {
-            node.fillColor = UIColor(red: 11/255, green: 255)
+            if (node.name == "good") {
+                node.fillColor = UIColor(red: 11/255, green: 1, blue: 0, alpha: 1)
+                node.strokeColor = UIColor(red: 7/255, green: 178/225, blue: 0, alpha: 1)
+            } else {
+                node.fillColor = UIColor(red: 1, green: 10/255, blue: 0, alpha: 1)
+                node.strokeColor = UIColor(red: 178/255, green: 7/225, blue: 0, alpha: 1)
+            }
         }
     }
     
