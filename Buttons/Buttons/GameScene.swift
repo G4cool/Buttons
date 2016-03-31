@@ -10,7 +10,7 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    var buttonTotal = 1
+    var buttonTotal = 3
     var buttonCount = 1
     var shapeNodes : [SKShapeNode] = []
     var correct = false
