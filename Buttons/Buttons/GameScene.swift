@@ -10,10 +10,11 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    var buttonTotal = 3
+    var buttonTotal = 1
     var buttonCount = 1
     var shapeNodes : [SKShapeNode] = []
     var correct = false
+    var guessed = false
     
     override func didMoveToView(view: SKView) {
         
@@ -21,6 +22,9 @@ class GameScene: SKScene {
         let rand = randRange(1, upper: buttonTotal)
         
         backgroundColor = SKColor.whiteColor()
+        
+        // Repeat
+        runAction(SKAction.repeatActionForever(SKAction.sequence([SKAction.runBlock(doAction), SKAction.waitForDuration(1.0)])))
         
         for _ in 1...buttonTotal {
             addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
@@ -30,38 +34,44 @@ class GameScene: SKScene {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        // Identify touch
-        for touch: AnyObject in touches {
-            let location = touch.locationInNode(self)
-            let touchedNode = self.nodeAtPoint(location)
+        // Check if valid
+        if guessed == false {
+            // Identify touch
+            for touch: AnyObject in touches {
+                let location = touch.locationInNode(self)
+                let touchedNode = self.nodeAtPoint(location)
+                
+                if touchedNode.name == "good" {
+                    print("yes")
+                    correct = true
+                } else {
+                    print("no")
+                    correct = false
+                }
+            }
             
-            if touchedNode.name == "good" {
-                print("yes")
-                correct = true
-            } else {
-                print("no")
-                correct = false
+            // Change color of SKShapeNodes
+            for node in shapeNodes {
+                if (node.name == "good") {
+                    node.fillColor = UIColor(red: 11/255, green: 1, blue: 0, alpha: 1)
+                    node.strokeColor = UIColor(red: 7/255, green: 178/225, blue: 0, alpha: 1)
+                } else {
+                    node.fillColor = UIColor(red: 1, green: 10/255, blue: 0, alpha: 1)
+                    node.strokeColor = UIColor(red: 178/255, green: 7/225, blue: 0, alpha: 1)
+                }
             }
-        }
-        
-        // Change color of SKShapeNodes
-        for node in shapeNodes {
-            if (node.name == "good") {
-                node.fillColor = UIColor(red: 11/255, green: 1, blue: 0, alpha: 1)
-                node.strokeColor = UIColor(red: 7/255, green: 178/225, blue: 0, alpha: 1)
-            } else {
-                node.fillColor = UIColor(red: 1, green: 10/255, blue: 0, alpha: 1)
-                node.strokeColor = UIColor(red: 178/255, green: 7/225, blue: 0, alpha: 1)
+            
+            guessed = true
+            buttonTotal += 1
+            
+            // Remove the SKShapeNodes
+            for node in shapeNodes {
+                node.removeFromParent()
             }
+            shapeNodes.removeAll(keepCapacity: false)
+            buttonCount = 1
+            correct = false
         }
-        
-        // Remove the SKShapeNodes
-        for node in shapeNodes {
-            node.removeFromParent()
-        }
-        shapeNodes.removeAll(keepCapacity: false)
-        buttonCount = 1
-        correct = false
     }
     
     func random() -> CGFloat {
