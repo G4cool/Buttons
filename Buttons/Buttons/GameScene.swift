@@ -29,6 +29,8 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        // Identify touch
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
             let touchedNode = self.nodeAtPoint(location)
@@ -41,6 +43,8 @@ class GameScene: SKScene {
                 correct = false
             }
         }
+        
+        // Change color of SKShapeNodes
         for node in shapeNodes {
             if (node.name == "good") {
                 node.fillColor = UIColor(red: 11/255, green: 1, blue: 0, alpha: 1)
