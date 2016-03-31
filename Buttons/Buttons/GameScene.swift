@@ -24,7 +24,9 @@ class GameScene: SKScene {
         backgroundColor = SKColor.whiteColor()
         
         // Repeat
-        runAction(SKAction.repeatActionForever(SKAction.sequence([SKAction.runBlock(doAction), SKAction.waitForDuration(1.0)])))
+        runAction(SKAction.repeatActionForever(SKAction.sequence([SKAction.runBlock(
+            doAction
+        )])))
         
         for _ in 1...buttonTotal {
             addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
