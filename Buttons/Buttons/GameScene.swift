@@ -15,6 +15,7 @@ class GameScene: SKScene {
     var shapeNodes : [SKShapeNode] = []
     var correct = false
     var guessed = false
+    var needDelete = false
     
     override func didMoveToView(view: SKView) {
         
@@ -29,6 +30,7 @@ class GameScene: SKScene {
             addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
             buttonCount += 1
         }
+        removeNodes()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -62,21 +64,24 @@ class GameScene: SKScene {
             
             guessed = true
             buttonTotal += 1
+            buttonCount = 1
+            correct = false
+            needDelete = true
             
             // Delay (for now, change later)
             sleep(2)
-            
-            /*
+        }
+    }
+    
+    func removeNodes() {
+        if needDelete == true {
             // Remove the SKShapeNodes
             for node in shapeNodes {
                 node.removeFromParent()
             }
-            // Check keepCapacity
-            shapeNodes.removeAll(keepCapacity: false)
-            */
-            buttonCount = 1
-            correct = false
+            shapeNodes.removeAll()
         }
+        needDelete = false
     }
     
     func random() -> CGFloat {
