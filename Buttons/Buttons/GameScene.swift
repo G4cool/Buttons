@@ -30,9 +30,6 @@ class GameScene: SKScene {
             addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
             buttonCount += 1
         }
-        // Delay (for now, change later)
-        sleep(2)
-        //removeNodes()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -74,7 +71,7 @@ class GameScene: SKScene {
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        // Delay
+        // Delay (for now, change later)
         sleep(2)
         
         // Remove the SKShapeNodes
