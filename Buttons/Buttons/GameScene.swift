@@ -74,6 +74,7 @@ class GameScene: SKScene {
     
     func removeNodes() {
         print("hi")
+        print(needDelete)
         if needDelete == true {
             print("needs deleting")
             // Remove the SKShapeNodes
