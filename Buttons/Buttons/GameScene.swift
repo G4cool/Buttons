@@ -54,6 +54,14 @@ class GameScene: SKScene {
                 node.strokeColor = UIColor(red: 178/255, green: 7/225, blue: 0, alpha: 1)
             }
         }
+        
+        // Remove the SKShapeNodes
+        for node in shapeNodes {
+            node.removeFromParent()
+        }
+        shapeNodes.removeAll(keepCapacity: false)
+        buttonCount = 1
+        correct = false
     }
     
     func random() -> CGFloat {
