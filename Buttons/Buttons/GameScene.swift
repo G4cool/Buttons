@@ -63,14 +63,15 @@ class GameScene: SKScene {
             guessed = true
             buttonTotal += 1
             
-            /*
+            // Delay (for now, change later)
+            sleep(2)
+            
             // Remove the SKShapeNodes
             for node in shapeNodes {
                 node.removeFromParent()
             }
             // Check keepCapacity
             shapeNodes.removeAll(keepCapacity: false)
-            */
             buttonCount = 1
             correct = false
         }
