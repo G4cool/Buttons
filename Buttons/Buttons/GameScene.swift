@@ -44,7 +44,7 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
+        print("screen touched")
         // Check if valid
         if guessed == false {
             // Identify touch
@@ -98,7 +98,7 @@ class GameScene: SKScene {
     }
     
     func addButton(buttonCount: Int, buttonTotal: Int, rand: CGFloat) {
-        
+        print("adding buttons")
         //for _ in 1...buttonTotal {
             // Creat color
             let customFillColor = UIColor(red: 1, green: 108/255, blue: 0, alpha: 1)
