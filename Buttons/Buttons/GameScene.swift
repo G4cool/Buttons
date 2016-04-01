@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import Foundation
 
 class GameScene: SKScene {
     
@@ -67,6 +68,11 @@ class GameScene: SKScene {
                     node.strokeColor = UIColor(red: 178/255, green: 7/225, blue: 0, alpha: 1)
                 }
             }
+            
+            let alertController = UIAlertController(title: "iOScreator", message:"Hello, world!", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
             
             guessed = true
             buttonCount = 1

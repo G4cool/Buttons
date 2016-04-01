@@ -20,6 +20,16 @@ class GameViewController: UIViewController {
         skView.ignoresSiblingOrder = true
         scene.scaleMode = .ResizeFill
         skView.presentScene(scene)
+        NSNotificationCenter.defaultCenter().addObserver(self,selector:"AlertMessage:",name:"AlertMessage",object:nil);
+    }
+    
+    func AlertMessage(notification:NSNotification)
+    {
+        if(let userInfo = notification.userInfo)
+        {
+            let message = userInfo["message"]
+            ....//do alert view call here
+        }
     }
     
     override func prefersStatusBarHidden() -> Bool {
