@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
+        <!--GameView-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Buttons" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="GameView" id="BV1-FR-VrT" customClass="GameViewController" customModule="Buttons" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
@@ -25,7 +25,7 @@
         <!--Menu-->
         <scene sceneID="aSq-N3-zEf">
             <objects>
-                <viewController title="Menu" id="Aox-3r-BDb" customClass="MenuViewController" customModule="Buttons" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Menu" title="Menu" id="Aox-3r-BDb" customClass="MenuViewController" customModule="Buttons" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7g9-as-mlo"/>
                         <viewControllerLayoutGuide type="bottom" id="han-ry-Qew"/>
@@ -35,6 +35,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="BV1-FR-VrT" kind="show" identifier="toGameView" id="mOH-z3-MrF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lf2-N4-Vh1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
