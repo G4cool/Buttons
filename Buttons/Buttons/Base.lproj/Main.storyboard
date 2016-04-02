@@ -25,7 +25,7 @@
         <!--Menu-->
         <scene sceneID="aSq-N3-zEf">
             <objects>
-                <viewController title="Menu" id="Aox-3r-BDb" sceneMemberID="viewController">
+                <viewController title="Menu" id="Aox-3r-BDb" customClass="MenuViewController" customModule="Buttons" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7g9-as-mlo"/>
                         <viewControllerLayoutGuide type="bottom" id="han-ry-Qew"/>
