@@ -69,11 +69,6 @@ class GameScene: SKScene {
                 }
             }
             
-            let alertController = UIAlertController(title: "iOScreator", message:"Hello, world!", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-            
             guessed = true
             buttonCount = 1
             correct = false
