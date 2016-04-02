@@ -47,18 +47,10 @@ class MenuViewController: UIViewController {
         button.lineWidth = 3
         
         // Define some properties
-        if CGFloat((buttonCount + 1)) == rand {
-            button.name = "good"
-        } else {
-            button.name = "bad"
-        }
-        print(rand)
-        print(buttonCount + 1)
-        print(button.name)
+        button.name = "playButton"
         button.userInteractionEnabled = false
         
         // Add the button to the array and to the scene
-        shapeNodes.append(button)
         addChild(button)
 
     }
