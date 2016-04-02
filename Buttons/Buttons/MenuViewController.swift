@@ -12,6 +12,9 @@ import UIKit
 class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Set background color
+        let menuBackgroundColor = UIColor(red: 1, green: 200/255, blue: 0, alpha: 1)
+        self.view.backgroundColor = menuBackgroundColor
     }
 }
