@@ -17,6 +17,7 @@
 		8162C4401CAAC4DF00735CFF /* ButtonsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162C43F1CAAC4DF00735CFF /* ButtonsUITests.swift */; };
 		8162C4521CAAC80D00735CFF /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8162C4511CAAC80D00735CFF /* sprites.atlas */; };
 		8162C4561CAAC83C00735CFF /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 8162C4551CAAC83C00735CFF /* Sounds */; };
+		81C1A3C21CB0756F00E78AA9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1A3C11CB0756F00E78AA9 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		8162C4411CAAC4DF00735CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8162C4511CAAC80D00735CFF /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		8162C4551CAAC83C00735CFF /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
+		81C1A3C11CB0756F00E78AA9 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				8162C41F1CAAC4DF00735CFF /* GameScene.swift */,
 				8162C4211CAAC4DF00735CFF /* GameViewController.swift */,
 				8162C4231CAAC4DF00735CFF /* Main.storyboard */,
+				81C1A3C11CB0756F00E78AA9 /* MenuViewController.swift */,
 				8162C4261CAAC4DF00735CFF /* Assets.xcassets */,
 				8162C4281CAAC4DF00735CFF /* LaunchScreen.storyboard */,
 				8162C42B1CAAC4DF00735CFF /* Info.plist */,
@@ -270,6 +273,7 @@
 				8162C4201CAAC4DF00735CFF /* GameScene.swift in Sources */,
 				8162C4221CAAC4DF00735CFF /* GameViewController.swift in Sources */,
 				8162C41C1CAAC4DF00735CFF /* AppDelegate.swift in Sources */,
+				81C1A3C21CB0756F00E78AA9 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +500,7 @@
 				8162C4461CAAC4DF00735CFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8162C4471CAAC4DF00735CFF /* Build configuration list for PBXNativeTarget "ButtonsTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +509,7 @@
 				8162C4491CAAC4DF00735CFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8162C44A1CAAC4DF00735CFF /* Build configuration list for PBXNativeTarget "ButtonsUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +518,7 @@
 				8162C44C1CAAC4DF00735CFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
