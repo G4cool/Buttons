@@ -51,7 +51,7 @@ class MenuViewController: UIViewController {
         button.userInteractionEnabled = false
         
         // Add the button to the array and to the scene
-        addChild(button)
+        self.addChild(button)
 
     }
 }
