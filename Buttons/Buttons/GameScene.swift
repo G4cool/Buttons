@@ -18,6 +18,12 @@ class GameScene: SKScene {
     var guessed = false
     var needDelete = false
     var rand = 0
+    var randFillRed = CGFloat(0)
+    var randFillGreen = CGFloat(0)
+    var randFillBlue = CGFloat(0)
+    var randStrokeRed = CGFloat(0)
+    var randStrokeGreen = CGFloat(0)
+    var randStrokeBlue = CGFloat(0)
     
     override func didMoveToView(view: SKView) {
         
@@ -50,10 +56,8 @@ class GameScene: SKScene {
                 let touchedNode = self.nodeAtPoint(location)
                 
                 if touchedNode.name == "good" {
-                    print("yes")
                     correct = true
                 } else {
-                    print("no")
                     correct = false
                 }
             }
@@ -99,10 +103,7 @@ class GameScene: SKScene {
     }
     
     func removeNodes() {
-        print("hi")
-        print(needDelete)
         if needDelete == true {
-            print("needs deleting")
             // Remove the SKShapeNodes
             for node in shapeNodes {
                 node.removeFromParent()
@@ -126,9 +127,17 @@ class GameScene: SKScene {
     
     func addButton(buttonCount: Int, buttonTotal: Int, rand: CGFloat) {
         
-        // Creat color
-        let customFillColor = UIColor(red: 1, green: 108/255, blue: 0, alpha: 1)
-        let customStrokeColor = UIColor(red: 178/255, green: 75/255, blue: 0, alpha: 1)
+        // Create random numbers for colors
+        randFillRed = CGFloat(randRange(0, upper: 255))
+        randFillGreen = CGFloat(randRange(0, upper: 255))
+        randFillBlue = CGFloat(randRange(0, upper: 255))
+        randStrokeRed = CGFloat(randRange(0, upper: 255))
+        randStrokeGreen = CGFloat(randRange(0, upper: 255))
+        randStrokeBlue = CGFloat(randRange(0, upper: 255))
+        
+        // Create color
+        let customFillColor = UIColor(red: CGFloat(randFillRed/255), green: CGFloat(randFillGreen/255), blue: CGFloat(randFillBlue/255), alpha: 1)
+        let customStrokeColor = UIColor(red: CGFloat(randStrokeRed/255), green: CGFloat(randStrokeGreen/255), blue: CGFloat(randStrokeBlue/255), alpha: 1)
         
         // Create a button
         let button = SKShapeNode()
