@@ -35,7 +35,8 @@ class MenuViewController: UIViewController {
         let customStrokeColor = UIColor(red: 178/255, green: 75/255, blue: 0, alpha: 1)
         
         // Create a button
-        let button = SKShapeNode()
+        //let button = SKShapeNode()
+        let button = UIButton(type: UIButtonType.System) as UIButton
         
         // Created rounded corners and position button
         button.path = UIBezierPath(roundedRect: CGRect(x: view.bounds.width/2, y: view.bounds.height/2, width: view.bounds.width/2, height: 20), cornerRadius: 4).CGPath
@@ -51,7 +52,7 @@ class MenuViewController: UIViewController {
         button.userInteractionEnabled = false
         
         // Add the button to the array and to the scene
-        self.addChild(button)
+        self.view.addSubview(button)
 
     }
 }
