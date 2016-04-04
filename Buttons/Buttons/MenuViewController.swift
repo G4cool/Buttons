@@ -28,6 +28,7 @@ class MenuViewController: UIViewController {
         
     }
     
+    /*
     func createPlayButton() {
         
         // Create colors
@@ -55,4 +56,5 @@ class MenuViewController: UIViewController {
         self.view.addSubview(button)
 
     }
+     */
 }
