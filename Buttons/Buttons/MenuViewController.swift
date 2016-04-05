@@ -52,7 +52,7 @@ class MenuViewController: UIViewController {
         
         // Define some properties
         button.setTitle("playButton", forState: UIControlState.Normal)
-        button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action: Selector("buttonAction:"), forControlEvents: UIControlEvents.TouchUpInside)
         
         // Add the button to the array and to the scene
         self.view.addSubview(button)
