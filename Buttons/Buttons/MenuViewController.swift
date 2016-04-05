@@ -19,7 +19,7 @@ class MenuViewController: UIViewController {
         self.view.backgroundColor = menuBackgroundColor
         
         // Create play button
-        
+        createPlayButton()
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
