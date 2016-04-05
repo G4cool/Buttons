@@ -45,6 +45,7 @@ class MenuViewController: UIViewController {
         //button.path = UIBezierPath(roundedRect: CGRect(x: view.bounds.width/2, y: view.bounds.height/2, width: view.bounds.width/2, height: 20), cornerRadius: 4).CGPath
         //button.frame(roundedRect: CGRectMake(x: view.bounds.width/2, y: view.bounds.height/2, width: view.bounds.width/2, height: 20), cornerRadius: 4).CGPath
         button.frame = CGRectMake(view.bounds.width/4, view.bounds.height/2, view.bounds.width/2, 50)
+        button.layer.cornerRadius = 4
      
         // Coloring and design
         //button.fillColor = customFillColor
