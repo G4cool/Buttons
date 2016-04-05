@@ -28,6 +28,14 @@ class MenuViewController: UIViewController {
         
     }
     
+    func buttonAction(sender: UIButton!) {
+        // Recognizing button
+        let btnsendtag: UIButton = sender
+        if btnsendtag.tag == 1 {
+            //do anything here
+        }
+    }
+    
     ///*
     func createPlayButton() {
         
@@ -52,7 +60,8 @@ class MenuViewController: UIViewController {
         
         // Define some properties
         button.setTitle("playButton", forState: UIControlState.Normal)
-        button.addTarget(self, action: Selector("buttonAction:"), forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action: #selector(MenuViewController.buttonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        button.tag = 1
         
         // Add the button to the array and to the scene
         self.view.addSubview(button)
