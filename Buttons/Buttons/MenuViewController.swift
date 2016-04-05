@@ -35,7 +35,7 @@ class MenuViewController: UIViewController {
         
         // Create colors
         let customFillColor = UIColor(red: 1, green: 108/255, blue: 0, alpha: 1)
-        //let customStrokeColor = UIColor(red: 178/255, green: 75/255, blue: 0, alpha: 1)
+        let customBorderColor = UIColor(red: 178/255, green: 75/255, blue: 0, alpha: 1).CGColor
         
         // Create a button
         let button = UIButton(type: UIButtonType.System) as UIButton
@@ -46,8 +46,8 @@ class MenuViewController: UIViewController {
      
         // Coloring and design
         button.backgroundColor = customFillColor
-        //button.strokeColor = customStrokeColor
-        //button.lineWidth = 3
+        button.layer.borderColor = customBorderColor
+        button.layer.borderWidth = 3
         
         // Define some properties
         button.setTitle("Play", forState: UIControlState.Normal)
