@@ -22,21 +22,15 @@ class MenuViewController: UIViewController {
         createPlayButton()
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
-        self.performSegueWithIdentifier("toGameView", sender: self)
-        
-    }
-    
     func buttonAction(sender: UIButton!) {
         // Recognizing button
         let btnsendtag: UIButton = sender
         if btnsendtag.tag == 1 {
-            //do anything here
+            // Go to GameSceen
+            self.performSegueWithIdentifier("toGameView", sender: self)
         }
     }
     
-    ///*
     func createPlayButton() {
         
         // Create colors
@@ -67,5 +61,4 @@ class MenuViewController: UIViewController {
         self.view.addSubview(button)
 
     }
-     //*/
 }
