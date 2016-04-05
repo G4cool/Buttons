@@ -53,7 +53,7 @@ class MenuViewController: UIViewController {
         //button.lineWidth = 3
         
         // Define some properties
-        button.setTitle("playButton", forState: UIControlState.Normal)
+        button.setTitle("Play", forState: UIControlState.Normal)
         button.addTarget(self, action: #selector(MenuViewController.buttonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         button.tag = 1
         
