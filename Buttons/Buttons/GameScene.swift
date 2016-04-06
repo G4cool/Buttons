@@ -34,21 +34,19 @@ class GameScene: SKScene {
         
         backgroundColor = SKColor.whiteColor()
         
-        // Repeat
-        //while true {
-            if needDelete == false {
-                // Create random numbers for colors
-                randColors()
-                
-                for _ in 1...buttonTotal {
-                    addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand), randFillRedCorrect: randFillRedCorrect, randFillRed: randFillRed, randFillGreen: randFillGreen, randFillBlue: randFillBlue, randStrokeRed: randStrokeRed, randStrokeGreen: randStrokeGreen, randStrokeBlue: randStrokeBlue)
+        
+        if needDelete == false {
+            // Create random numbers for colors
+            randColors()
+            
+            for _ in 1...buttonTotal {
+                addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand), randFillRedCorrect: randFillRedCorrect, randFillRed: randFillRed, randFillGreen: randFillGreen, randFillBlue: randFillBlue, randStrokeRed: randStrokeRed, randStrokeGreen: randStrokeGreen, randStrokeBlue: randStrokeBlue)
                     buttonCount += 1
-                }
-                buttonTotal += 1
-                guessed = false
-                needDelete = true
             }
-        //}
+            buttonTotal += 1
+            guessed = false
+            needDelete = true
+        }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -145,6 +143,7 @@ class GameScene: SKScene {
     }
     
     func randColors() {
+        // Create random numbers for colors
         randFillRed = CGFloat(randRange(0, upper: 255))
         randFillGreen = CGFloat(randRange(0, upper: 255))
         randFillBlue = CGFloat(randRange(0, upper: 255))
