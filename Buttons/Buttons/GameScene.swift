@@ -24,6 +24,7 @@ class GameScene: SKScene {
     var randStrokeRed = CGFloat(0)
     var randStrokeGreen = CGFloat(0)
     var randStrokeBlue = CGFloat(0)
+    var touchedNothing = true
     
     override func didMoveToView(view: SKView) {
         
@@ -57,48 +58,59 @@ class GameScene: SKScene {
                 
                 if touchedNode.name == "good" {
                     correct = true
-                } else {
+                    touchedNothing = false
+                    print("twas good")
+                } else if touchedNode.name == "bad" {
                     correct = false
-                }
-            }
-            
-            // Change color of SKShapeNodes
-            for node in shapeNodes {
-                if (node.name == "good") {
-                    node.fillColor = UIColor(red: 11/255, green: 1, blue: 0, alpha: 1)
-                    node.strokeColor = UIColor(red: 7/255, green: 178/225, blue: 0, alpha: 1)
+                    touchedNothing = false
+                    print("twas bad")
                 } else {
-                    node.fillColor = UIColor(red: 1, green: 10/255, blue: 0, alpha: 1)
-                    node.strokeColor = UIColor(red: 178/255, green: 7/225, blue: 0, alpha: 1)
+                    touchedNothing = true
+                    print("twas nothing")
                 }
             }
             
-            guessed = true
-            buttonCount = 1
-            correct = false
-            needDelete = true
+            if touchedNothing == false {
+                // Change color of SKShapeNodes
+                for node in shapeNodes {
+                    if (node.name == "good") {
+                        node.fillColor = UIColor(red: 11/255, green: 1, blue: 0, alpha: 1)
+                        node.strokeColor = UIColor(red: 7/255, green: 178/225, blue: 0, alpha: 1)
+                    } else {
+                        node.fillColor = UIColor(red: 1, green: 10/255, blue: 0, alpha: 1)
+                        node.strokeColor = UIColor(red: 178/255, green: 7/225, blue: 0, alpha: 1)
+                    }
+                }
+            
+                guessed = true
+                buttonCount = 1
+                correct = false
+                needDelete = true
+            }
         }
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        // Delay (for now, change later)
-        sleep(1)
+        if touchedNothing == false {
+            // Delay (for now, change later)
+            sleep(1)
+            
+            // Remove the SKShapeNodes
+            removeNodes()
         
-        // Remove the SKShapeNodes
-        removeNodes()
+            buttonCount = 1
         
-        buttonCount = 1
-        
-        if needDelete == false {
-            for _ in 1...buttonTotal {
-                addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
-                buttonCount += 1
+            if needDelete == false {
+                for _ in 1...buttonTotal {
+                    addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand))
+                    buttonCount += 1
+                }
+                buttonTotal += 1
+                rand = randRange(1, upper: buttonTotal)
+                guessed = false
+                needDelete = true
             }
-            buttonTotal += 1
-            rand = randRange(1, upper: buttonTotal)
-            guessed = false
-            needDelete = true
         }
     }
     
@@ -167,9 +179,6 @@ class GameScene: SKScene {
         } else {
             button.name = "bad"
         }
-        print(rand)
-        print(buttonCount + 1)
-        print(button.name)
         button.userInteractionEnabled = false
         
         // Add the button to the array and to the scene
