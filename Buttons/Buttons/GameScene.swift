@@ -38,17 +38,7 @@ class GameScene: SKScene {
         //while true {
             if needDelete == false {
                 // Create random numbers for colors
-                randFillRed = CGFloat(randRange(0, upper: 255))
-                randFillGreen = CGFloat(randRange(0, upper: 255))
-                randFillBlue = CGFloat(randRange(0, upper: 255))
-                randStrokeRed = CGFloat(randRange(0, upper: 255))
-                randStrokeGreen = CGFloat(randRange(0, upper: 255))
-                randStrokeBlue = CGFloat(randRange(0, upper: 255))
-                if randFillRed == 0 {
-                    randFillRedCorrect = randFillRed + 1
-                } else {
-                    randFillRedCorrect = randFillRed - 1
-                }
+                randColors()
                 
                 for _ in 1...buttonTotal {
                     addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand), randFillRedCorrect: randFillRedCorrect, randFillRed: randFillRed, randFillGreen: randFillGreen, randFillBlue: randFillBlue, randStrokeRed: randStrokeRed, randStrokeGreen: randStrokeGreen, randStrokeBlue: randStrokeBlue)
@@ -117,17 +107,7 @@ class GameScene: SKScene {
         
             if needDelete == false {
                 // Create random numbers for colors
-                randFillRed = CGFloat(randRange(0, upper: 255))
-                randFillGreen = CGFloat(randRange(0, upper: 255))
-                randFillBlue = CGFloat(randRange(0, upper: 255))
-                randStrokeRed = CGFloat(randRange(0, upper: 255))
-                randStrokeGreen = CGFloat(randRange(0, upper: 255))
-                randStrokeBlue = CGFloat(randRange(0, upper: 255))
-                if randFillRed < 100 {
-                    randFillRedCorrect = randFillRed + 100
-                } else {
-                    randFillRedCorrect = randFillRed - 100
-                }
+                randColors()
                 
                 for _ in 1...buttonTotal {
                     addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand), randFillRedCorrect: randFillRedCorrect, randFillRed: randFillRed, randFillGreen: randFillGreen, randFillBlue: randFillBlue, randStrokeRed: randStrokeRed, randStrokeGreen: randStrokeGreen, randStrokeBlue: randStrokeBlue)
@@ -162,6 +142,20 @@ class GameScene: SKScene {
     
     func randRange (lower: Int , upper: Int) -> Int {
         return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
+    }
+    
+    func randColors() {
+        randFillRed = CGFloat(randRange(0, upper: 255))
+        randFillGreen = CGFloat(randRange(0, upper: 255))
+        randFillBlue = CGFloat(randRange(0, upper: 255))
+        randStrokeRed = CGFloat(randRange(0, upper: 255))
+        randStrokeGreen = CGFloat(randRange(0, upper: 255))
+        randStrokeBlue = CGFloat(randRange(0, upper: 255))
+        if randFillRed < 100 {
+            randFillRedCorrect = randFillRed + 100
+        } else {
+            randFillRedCorrect = randFillRed - 100
+        }
     }
     
     func addButton(buttonCount: Int, buttonTotal: Int, rand: CGFloat, randFillRedCorrect: CGFloat, randFillRed: CGFloat, randFillGreen: CGFloat, randFillBlue: CGFloat, randStrokeRed: CGFloat, randStrokeGreen: CGFloat, randStrokeBlue: CGFloat) {
