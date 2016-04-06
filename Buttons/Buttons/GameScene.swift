@@ -140,14 +140,17 @@ class GameScene: SKScene {
         let customStrokeColor = UIColor(red: CGFloat(randStrokeRed/255), green: CGFloat(randStrokeGreen/255), blue: CGFloat(randStrokeBlue/255), alpha: 1)
         
         // Create a button
-        let button = SKShapeNode()
+        //let button = SKShapeNode()
+        let spacingFactor = CGFloat(4.5)/CGFloat(buttonTotal)
+        let radius = ((size.width - 10)/(CGFloat(buttonTotal)) - (spacingFactor * CGFloat(buttonTotal)))/4
+        let button = SKShapeNode(circleOfRadius: radius)
         
         // Created rounded corners and position button
-        let spacingFactor = CGFloat(4.5)/CGFloat(buttonTotal)
         //let yPos = (((size.height - 10)/(CGFloat(buttonTotal))) + (CGFloat(2 * buttonCount) * ((size.height/(CGFloat(2 * buttonTotal))) - spacingFactor)))
         let xPos = (((size.width - 10)/(CGFloat(buttonTotal))) + (CGFloat(2 * buttonCount) * ((size.width/(CGFloat(2 * buttonTotal))) - spacingFactor)))
         //button.path = UIBezierPath(roundedRect: CGRect(x: 5, y: size.height - 5 - yPos, width: size.width - 10, height: ((size.height - 10)/(CGFloat(buttonTotal)) - (spacingFactor * CGFloat(buttonTotal)))), cornerRadius: 4).CGPath
-        button.path = UIBezierPath(roundedRect: CGRect(x: size.width - 5 - xPos, y: 5, width: ((size.width - 10)/(CGFloat(buttonTotal)) - (spacingFactor * CGFloat(buttonTotal))), height: size.height - 10), cornerRadius: 4).CGPath
+        //button.path = UIBezierPath(roundedRect: CGRect(x: size.width - 5 - xPos, y: 5, width: ((size.width - 10)/(CGFloat(buttonTotal)) - (spacingFactor * CGFloat(buttonTotal))), height: size.height - 10), cornerRadius: 4).CGPath
+        button.position = CGPointMake(size.width - 5 - xPos, size.height/2)
         
         
         // Coloring and design
