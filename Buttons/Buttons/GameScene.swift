@@ -142,7 +142,8 @@ class GameScene: SKScene {
         // Create a button
         //let button = SKShapeNode()
         let spacingFactor = CGFloat(4.5)/CGFloat(buttonTotal)
-        let radius = ((size.width - 10)/(CGFloat(buttonTotal)) - (spacingFactor * CGFloat(buttonTotal)))/4
+        //let radius = ((size.width - 10)/(CGFloat(buttonTotal)) - (spacingFactor * CGFloat(buttonTotal)))/4
+        let radius = ((size.width - 10)/(CGFloat(buttonTotal)))/4
         let button = SKShapeNode(circleOfRadius: radius)
         
         // Created rounded corners and position button
