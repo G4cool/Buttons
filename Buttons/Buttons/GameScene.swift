@@ -26,6 +26,8 @@ class GameScene: SKScene {
     var randStrokeGreen = CGFloat(0)
     var randStrokeBlue = CGFloat(0)
     var touchedNothing = true
+    var SwiftTimer = NSTimer()
+    var SwiftCounter = 0
     
     override func didMoveToView(view: SKView) {
         
@@ -107,6 +109,10 @@ class GameScene: SKScene {
                 // Create random numbers for colors
                 randColors()
                 
+                // Start the timer
+                SwiftCounter = 0
+                SwiftTimer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: #selector(GameScene.updateCounter), userInfo: nil, repeats: true)
+                
                 for _ in 1...buttonTotal {
                     addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand), randFillRedCorrect: randFillRedCorrect, randFillRed: randFillRed, randFillGreen: randFillGreen, randFillBlue: randFillBlue, randStrokeRed: randStrokeRed, randStrokeGreen: randStrokeGreen, randStrokeBlue: randStrokeBlue)
                     buttonCount += 1
@@ -117,6 +123,10 @@ class GameScene: SKScene {
                 needDelete = true
             }
         }
+    }
+    
+    func updateCounter() {
+        
     }
     
     func removeNodes() {
