@@ -11,6 +11,15 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     
+    var SwiftTimer = NSTimer()
+    var SwiftCounter = 0
+    SwiftTimer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
+    
+    // Add the timer label
+    @IBOutlet weak var timer: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let scene = GameScene(size: view.bounds.size)
@@ -24,5 +33,9 @@ class GameViewController: UIViewController {
     
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    func updateCounter() {
+        
     }
 }

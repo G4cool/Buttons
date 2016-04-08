@@ -26,8 +26,6 @@ class GameScene: SKScene {
     var randStrokeGreen = CGFloat(0)
     var randStrokeBlue = CGFloat(0)
     var touchedNothing = true
-    var SwiftTimer = NSTimer()
-    var SwiftCounter = 1
     
     override func didMoveToView(view: SKView) {
         
