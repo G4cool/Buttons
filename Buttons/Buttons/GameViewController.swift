@@ -17,7 +17,7 @@ class GameViewController: UIViewController {
     // Add the timer label
     @IBOutlet weak var timer: UILabel!
     func startTimer(sender: AnyObject) {
-        var SwiftTimer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: #selector(GameViewController.updateCounter), userInfo: nil, repeats: true)
+        _ = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: #selector(GameViewController.updateCounter), userInfo: nil, repeats: true)
     }
     
     override func viewDidLoad() {
