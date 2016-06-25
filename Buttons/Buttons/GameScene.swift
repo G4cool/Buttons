@@ -174,7 +174,7 @@ class GameScene: SKScene {
         let customStrokeColor = UIColor(red: CGFloat(randStrokeRed/255), green: CGFloat(randStrokeGreen/255), blue: CGFloat(randStrokeBlue/255), alpha: 1)
         
         // Create a button
-        let scaleFactor = ((7 * (buttonTotal - 1)) - (6 * buttonTotal))
+        let scaleFactor = ((7 * (buttonTotal - 1)) - (7 * buttonTotal))
         let radius = ((size.height)/(CGFloat(buttonTotal)) + CGFloat(scaleFactor))/2
         let button = SKShapeNode(circleOfRadius: radius)
         
