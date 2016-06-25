@@ -26,7 +26,7 @@ class GameScene: SKScene {
     var randStrokeGreen = CGFloat(0)
     var randStrokeBlue = CGFloat(0)
     var touchedNothing = true
-    var mod = 1
+    var modRes = 1
     
     override func didMoveToView(view: SKView) {
         
@@ -40,8 +40,16 @@ class GameScene: SKScene {
             // Create random numbers for colors
             randColors()
             
+            for i in 1...Int(sqrt(Double(buttonTotal))) {
+                if (i != 1) && (buttonTotal % i == 0) {
+                    modRes = i
+                    print("buttonTotal: " + String(buttonTotal) + ", i: " + String(i))
+                    break
+                }
+            }
+            
             for _ in 1...buttonTotal {
-                addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand), randFillRedCorrect: randFillRedCorrect, randFillRed: randFillRed, randFillGreen: randFillGreen, randFillBlue: randFillBlue, randStrokeRed: randStrokeRed, randStrokeGreen: randStrokeGreen, randStrokeBlue: randStrokeBlue)
+                addButton((buttonCount - 1), buttonTotal: buttonTotal, modRes: modRes, rand: CGFloat(rand), randFillRedCorrect: randFillRedCorrect, randFillRed: randFillRed, randFillGreen: randFillGreen, randFillBlue: randFillBlue, randStrokeRed: randStrokeRed, randStrokeGreen: randStrokeGreen, randStrokeBlue: randStrokeBlue)
                 buttonCount += 1
             }
             buttonTotal += 1
@@ -122,7 +130,7 @@ class GameScene: SKScene {
                 needDelete = true
             }
             
-            mod = 1
+            modRes = 1
         }
     }
     
@@ -168,7 +176,7 @@ class GameScene: SKScene {
         }
     }
     
-    func addButton(buttonCount: Int, buttonTotal: Int, rand: CGFloat, randFillRedCorrect: CGFloat, randFillRed: CGFloat, randFillGreen: CGFloat, randFillBlue: CGFloat, randStrokeRed: CGFloat, randStrokeGreen: CGFloat, randStrokeBlue: CGFloat) {
+    func addButton(buttonCount: Int, buttonTotal: Int, modRes: Int, rand: CGFloat, randFillRedCorrect: CGFloat, randFillRed: CGFloat, randFillGreen: CGFloat, randFillBlue: CGFloat, randStrokeRed: CGFloat, randStrokeGreen: CGFloat, randStrokeBlue: CGFloat) {
         
         // Create color
         let customFillColor = UIColor(red: CGFloat(randFillRed/255), green: CGFloat(randFillGreen/255), blue: CGFloat(randFillBlue/255), alpha: 1)
@@ -180,13 +188,6 @@ class GameScene: SKScene {
         let button = SKShapeNode(circleOfRadius: radius)
         
         // Created rounded corners and position button
-        for i in 1...Int(sqrt(Double(buttonTotal))) {
-            if (i != 1) && (buttonTotal % i == 0) {
-                mod = i
-                print("buttonTotal: " + String(buttonTotal) + ", i: " + String(i))
-                break
-            }
-        }
         
         print("buttonCount: " + String(buttonCount + 1))
         
