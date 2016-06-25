@@ -62,11 +62,9 @@ class GameScene: SKScene {
                 if touchedNode.name == "good" {
                     correct = true
                     touchedNothing = false
-                    print("twas good")
                 } else if touchedNode.name == "bad" {
                     correct = false
                     touchedNothing = false
-                    print("twas bad")
                 } else {
                     touchedNothing = true
                     print("twas nothing")
