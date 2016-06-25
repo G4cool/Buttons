@@ -183,14 +183,9 @@ class GameScene: SKScene {
         for i in 1...Int(sqrt(Double(buttonTotal))) {
             if (i != 1) && (buttonTotal % i == 0) {
                 mod = i
-                //print("buttonTotal: " + String(buttonTotal) + ", i: " + String(i))
                 break
             }
         }
-        
-        print("buttonTotal: " + String(buttonTotal) + ", mod: " + String(mod))
-        
-        print("buttonCount: " + String(buttonCount + 1))
         
         button.position = CGPointMake((size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1)), ((size.height * (((CGFloat(buttonCount) + 1) % CGFloat(mod)) + 1))/CGFloat(mod + 1)))
         
