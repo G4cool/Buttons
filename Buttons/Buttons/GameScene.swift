@@ -121,7 +121,7 @@ class GameScene: SKScene {
                 _ = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: #selector(GameScene.updateCounter), userInfo: nil, repeats: true)
                 
                 for _ in 1...buttonTotal {
-                    addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand), randFillRedCorrect: randFillRedCorrect, randFillRed: randFillRed, randFillGreen: randFillGreen, randFillBlue: randFillBlue, randStrokeRed: randStrokeRed, randStrokeGreen: randStrokeGreen, randStrokeBlue: randStrokeBlue)
+                    addButton((buttonCount - 1), buttonTotal: buttonTotal, modRes: modRes, rand: CGFloat(rand), randFillRedCorrect: randFillRedCorrect, randFillRed: randFillRed, randFillGreen: randFillGreen, randFillBlue: randFillBlue, randStrokeRed: randStrokeRed, randStrokeGreen: randStrokeGreen, randStrokeBlue: randStrokeBlue)
                     buttonCount += 1
                 }
                 buttonTotal += 1
