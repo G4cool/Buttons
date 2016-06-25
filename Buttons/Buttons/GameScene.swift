@@ -186,7 +186,11 @@ class GameScene: SKScene {
             }
         }
         
-        button.position = CGPointMake((size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1)), ((size.height * (((CGFloat(buttonCount) + 1) % CGFloat(mod)) + 1))/CGFloat(mod + 1)))
+        if mod == 1 {
+            button.position = CGPointMake((size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1)), ((size.height * (((CGFloat(buttonCount) + 1) % CGFloat(2)) + 1))/CGFloat(2 + 1)))
+        } else {
+            button.position = CGPointMake((size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1)), ((size.height * (((CGFloat(buttonCount) + 1) % CGFloat(mod)) + 1))/CGFloat(mod + 1)))
+        }
         
         // Define some properties
         if CGFloat((buttonCount + 1)) == rand {
