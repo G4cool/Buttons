@@ -26,6 +26,7 @@ class GameScene: SKScene {
     var randStrokeGreen = CGFloat(0)
     var randStrokeBlue = CGFloat(0)
     var touchedNothing = true
+    var mod = 1
     
     override func didMoveToView(view: SKView) {
         
@@ -41,7 +42,7 @@ class GameScene: SKScene {
             
             for _ in 1...buttonTotal {
                 addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand), randFillRedCorrect: randFillRedCorrect, randFillRed: randFillRed, randFillGreen: randFillGreen, randFillBlue: randFillBlue, randStrokeRed: randStrokeRed, randStrokeGreen: randStrokeGreen, randStrokeBlue: randStrokeBlue)
-                    buttonCount += 1
+                buttonCount += 1
             }
             buttonTotal += 1
             guessed = false
@@ -120,6 +121,8 @@ class GameScene: SKScene {
                 guessed = false
                 needDelete = true
             }
+            
+            mod = 1
         }
     }
     
@@ -177,6 +180,16 @@ class GameScene: SKScene {
         let button = SKShapeNode(circleOfRadius: radius)
         
         // Created rounded corners and position button
+        for i in 2...Int(sqrt(Double(buttonTotal))) {
+            if buttonTotal % i == 0 {
+                mod = i
+                print("buttonTotal: " + String(buttonTotal) + "i: " + String(i))
+                break
+            }
+        }
+        
+        print("buttonCount: " + String(buttonCount))
+        
         button.position = CGPointMake((size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1)), size.height/2)
         
         // Define some properties
