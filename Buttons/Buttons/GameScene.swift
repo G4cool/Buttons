@@ -181,14 +181,14 @@ class GameScene: SKScene {
         
         // Created rounded corners and position button
         for i in 1...Int(sqrt(Double(buttonTotal))) {
-            if buttonTotal % i == 0 {
+            if (i != 1) && (buttonTotal % i == 0) {
                 mod = i
                 print("buttonTotal: " + String(buttonTotal) + ", i: " + String(i))
                 break
             }
         }
         
-        print("buttonCount: " + String(buttonCount))
+        print("buttonCount: " + String(buttonCount + 1))
         
         button.position = CGPointMake((size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1)), size.height/2)
         
