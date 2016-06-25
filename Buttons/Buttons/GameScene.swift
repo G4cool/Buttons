@@ -180,7 +180,7 @@ class GameScene: SKScene {
         let button = SKShapeNode(circleOfRadius: radius)
         
         // Created rounded corners and position button
-        for i in 2...Int(sqrt(Double(buttonTotal))) {
+        for i in 1...Int(sqrt(Double(buttonTotal))) {
             if buttonTotal % i == 0 {
                 mod = i
                 print("buttonTotal: " + String(buttonTotal) + "i: " + String(i))
