@@ -179,10 +179,19 @@ class GameScene: SKScene {
         let button = SKShapeNode(circleOfRadius: radius)
         
         // Created rounded corners and position button
-        for i in 1...Int(sqrt(Double(buttonTotal))) {
-            if (i != 1) && (buttonTotal % i == 0) {
-                mod = i
-                break
+        if buttonTotal <= 24 {
+            for i in 1...Int(sqrt(Double(buttonTotal))) {
+                if (i != 1) && (buttonTotal % i == 0) {
+                    mod = i
+                    //break
+                }
+            }
+        } else {
+            for i in 1...5 {
+                if (i != 1) && (buttonTotal % i == 0) {
+                    mod = i
+                    //break
+                }
             }
         }
         
