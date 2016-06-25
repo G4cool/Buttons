@@ -192,7 +192,7 @@ class GameScene: SKScene {
         
         print("buttonCount: " + String(buttonCount + 1))
         
-        button.position = CGPointMake((size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1)), ((size.height * ((CGFloat(buttonCount) + 1) % CGFloat(mod)))/CGFloat(mod + 1)))
+        button.position = CGPointMake((size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1)), ((size.height * (((CGFloat(buttonCount) + 1) % CGFloat(mod)) + 1))/CGFloat(mod + 1)))
         
         // Define some properties
         if CGFloat((buttonCount + 1)) == rand {
