@@ -41,6 +41,7 @@ class GameScene: SKScene {
             randColors()
             
             for i in 1...Int(sqrt(Double(buttonTotal))) {
+                print("wut")
                 if (i != 1) && (buttonTotal % i == 0) {
                     modRes = i
                     print("buttonTotal: " + String(buttonTotal) + ", i: " + String(i))
