@@ -191,7 +191,7 @@ class GameScene: SKScene {
         }
         
         // Create a button
-        let scaleFactor = ((7 * (buttonTotal - 1)) - ((7 - (mod/4)) * (buttonTotal - 1)) - 10)
+        let scaleFactor = ((7 * (buttonTotal - 1)) - ((7 - (mod/2)) * (buttonTotal - 1)) - 10)
         let radius = ((size.height)/(CGFloat(buttonTotal)) + CGFloat(scaleFactor))/2
         let button = SKShapeNode(circleOfRadius: radius)
         
