@@ -193,7 +193,7 @@ class GameScene: SKScene {
         // Create a button
         var scaleFactor = 0
         if (mod == 1) || (mod == 2) {
-            scaleFactor = ((8 * (buttonTotal - 1)) - ((6 * (buttonTotal - 1)) - 10))
+            scaleFactor = ((7 * (buttonTotal - 1)) - ((6 * (buttonTotal - 1)) - 10))
         } else {
             scaleFactor = ((6 * (buttonTotal - 1)) - ((7 - (3 * mod/4)) * (buttonTotal - 1)) - 10)
         }
