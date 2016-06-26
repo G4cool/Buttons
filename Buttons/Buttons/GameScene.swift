@@ -173,12 +173,7 @@ class GameScene: SKScene {
         let customFillColorCorrect = UIColor(red: CGFloat(randFillRedCorrect/255), green: CGFloat(randFillGreen/255), blue: CGFloat(randFillBlue/255), alpha: 1)
         let customStrokeColor = UIColor(red: CGFloat(randStrokeRed/255), green: CGFloat(randStrokeGreen/255), blue: CGFloat(randStrokeBlue/255), alpha: 1)
         
-        // Create a button
-        let scaleFactor = ((7 * (buttonTotal - 1)) - (7 * (buttonTotal - 1)) - 10)
-        let radius = ((size.height)/(CGFloat(buttonTotal)) + CGFloat(scaleFactor))/2
-        let button = SKShapeNode(circleOfRadius: radius)
-        
-        // Created rounded corners and position button
+        // Get mod (number of rows)
         if buttonTotal <= 24 {
             for i in 1...Int(sqrt(Double(buttonTotal))) {
                 if (i != 1) && (buttonTotal % i == 0) {
@@ -195,6 +190,12 @@ class GameScene: SKScene {
             }
         }
         
+        // Create a button
+        let scaleFactor = ((7 * (buttonTotal - 1)) - ((7 - mod) * (buttonTotal - 1)) - 10)
+        let radius = ((size.height)/(CGFloat(buttonTotal)) + CGFloat(scaleFactor))/2
+        let button = SKShapeNode(circleOfRadius: radius)
+        
+        // Created rounded corners and position button
         if (buttonTotal != 1) && (mod == 1) {
             button.position = CGPointMake((size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1)), ((size.height * (((CGFloat(buttonCount) + 1) % CGFloat(2)) + 1))/CGFloat(2 + 1)))
         } else {
