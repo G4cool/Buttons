@@ -198,7 +198,8 @@ class GameScene: SKScene {
             // Increasing (1 * mod/4) increases the radius
             scaleFactor = ((6 * (buttonTotal - 1)) - ((7 - (2 * mod/4)) * (buttonTotal - 1)) - 10)
         }
-        let radius = ((size.height)/(CGFloat(buttonTotal)) + CGFloat(scaleFactor))/2
+        //let radius = ((size.height)/(CGFloat(buttonTotal)) + CGFloat(scaleFactor))/2
+        let radius = (size.width/CGFloat(buttonTotal + 1))
         let button = SKShapeNode(circleOfRadius: radius)
         
         // Created rounded corners and position button
