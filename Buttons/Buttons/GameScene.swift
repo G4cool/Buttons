@@ -191,7 +191,23 @@ class GameScene: SKScene {
         }
         
         // Create a button
-        let radius = (size.width/CGFloat(buttonTotal + 1))
+        var xDist = ()
+        var yDist = 
+        var distance = sqrt(()() + ()())
+        var radius = CGFloat(0)
+        let xRad = (size.width/CGFloat(buttonTotal + 1))
+        var yRad = CGFloat(0)
+        if (mod == 1) {
+            yRad = (size.height/2)/2 - 10
+        } else {
+            yRad = (size.height/CGFloat(mod))/2 - 10
+        }
+        if (yRad <= xRad) {
+            radius = yRad
+        } else {
+            radius = xRad
+        }
+        //let radius = (size.width/CGFloat(buttonTotal + 1))
         let button = SKShapeNode(circleOfRadius: radius)
         
         // Created rounded corners and position button
