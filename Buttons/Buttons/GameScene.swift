@@ -11,7 +11,7 @@ import Foundation
 
 class GameScene: SKScene {
     
-    var buttonTotal = 1
+    var buttonTotal = 25
     var buttonCount = 1
     var shapeNodes : [SKShapeNode] = []
     var correct = false
@@ -195,7 +195,8 @@ class GameScene: SKScene {
         if (mod == 1) || (mod == 2) {
             scaleFactor = ((7 * (buttonTotal - 1)) - ((7 * (buttonTotal - 1)) - 10))
         } else {
-            scaleFactor = ((6 * (buttonTotal - 1)) - ((7 - (7 * mod/4)) * (buttonTotal - 1)) - 10)
+            // Increasing (1 * mod/4) increases the radius
+            scaleFactor = ((6 * (buttonTotal - 1)) - ((7 - (1 * mod/4)) * (buttonTotal - 1)) - 10)
         }
         let radius = ((size.height)/(CGFloat(buttonTotal)) + CGFloat(scaleFactor))/2
         let button = SKShapeNode(circleOfRadius: radius)
