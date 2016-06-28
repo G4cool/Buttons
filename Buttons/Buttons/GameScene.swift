@@ -11,7 +11,7 @@ import Foundation
 
 class GameScene: SKScene {
     
-    var buttonTotal = 1
+    var buttonTotal = 21
     var buttonCount = 1
     var shapeNodes : [SKShapeNode] = []
     var correct = false
@@ -191,16 +191,24 @@ class GameScene: SKScene {
         }
         
         // Create a button
-        let xDist = size.width/CGFloat(buttonTotal + 1)
+        let xDist = size.width/CGFloat(buttonTotal + 2)
         var yDist = CGFloat(0)
         if (mod == 1) {
-            yDist = size.height/CGFloat(2)
+            yDist = size.height/CGFloat(2 + 1)
         } else {
-            yDist = size.height/CGFloat(mod)
+            yDist = size.height/CGFloat(mod + 1)
         }
-        var distance = sqrt((xDist) * (xDist) + (yDist) * (yDist))
+        let distance = sqrt((xDist) * (xDist) + (yDist) * (yDist))
         //var radius = CGFloat(0)
-        var radius = distance
+        var radius = distance/2
+        if xDist < radius {
+            radius = xDist
+            if mod == 1 || mod == 2 {
+                radius = xDist - 5
+            }
+        } else if yDist < radius {
+            radius = yDist
+        }
         /*
         let xRad = (size.width/CGFloat(buttonTotal + 1))
         var yRad = CGFloat(0)
