@@ -191,8 +191,8 @@ class GameScene: SKScene {
         }
         
         // Create a button
-        var xDist = ()
-        var yDist = 
+        var xDist = size.width/CGFloat(buttonTotal + 1)
+        var yDist = size.height/
         var distance = sqrt(()() + ()())
         var radius = CGFloat(0)
         let xRad = (size.width/CGFloat(buttonTotal + 1))
