@@ -191,10 +191,17 @@ class GameScene: SKScene {
         }
         
         // Create a button
-        var xDist = size.width/CGFloat(buttonTotal + 1)
-        var yDist = size.height/CGFloat(mod)
-        var distance = sqrt((xDist)(xDist) + (yDist)(yDist))
-        var radius = CGFloat(0)
+        let xDist = size.width/CGFloat(buttonTotal + 1)
+        var yDist = CGFloat(0)
+        if (mod == 1) {
+            yDist = size.height/CGFloat(2)
+        } else {
+            yDist = size.height/CGFloat(mod)
+        }
+        var distance = sqrt((xDist) * (xDist) + (yDist) * (yDist))
+        //var radius = CGFloat(0)
+        var radius = distance
+        /*
         let xRad = (size.width/CGFloat(buttonTotal + 1))
         var yRad = CGFloat(0)
         if (mod == 1) {
@@ -207,6 +214,8 @@ class GameScene: SKScene {
         } else {
             radius = xRad
         }
+        */
+        
         //let radius = (size.width/CGFloat(buttonTotal + 1))
         let button = SKShapeNode(circleOfRadius: radius)
         
