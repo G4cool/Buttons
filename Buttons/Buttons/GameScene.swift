@@ -207,7 +207,7 @@ class GameScene: SKScene {
             mod += 1
         }
         
-        // Create a button
+        // Create a button with properties
         let xDist = size.width/CGFloat(buttonTotal + 2)
         var yDist = CGFloat(0)
         if (mod == 1) {
@@ -216,7 +216,6 @@ class GameScene: SKScene {
             yDist = size.height/CGFloat(mod + 1)
         }
         let distance = sqrt((xDist) * (xDist) + (yDist) * (yDist))
-        //var radius = CGFloat(0)
         var radius = distance/2
         if xDist < radius {
             radius = xDist
@@ -228,22 +227,7 @@ class GameScene: SKScene {
         } else {
             radius = distance/2 - 4
         }
-        /*
-        let xRad = (size.width/CGFloat(buttonTotal + 1))
-        var yRad = CGFloat(0)
-        if (mod == 1) {
-            yRad = (size.height/2)/2 - 10
-        } else {
-            yRad = (size.height/CGFloat(mod))/2 - 10
-        }
-        if (yRad <= xRad) {
-            radius = yRad
-        } else {
-            radius = xRad
-        }
-        */
         
-        //let radius = (size.width/CGFloat(buttonTotal + 1))
         let button = SKShapeNode(circleOfRadius: radius)
         
         // Created rounded corners and position button
@@ -274,13 +258,9 @@ class GameScene: SKScene {
         shapeNodes.append(button)
         addChild(button)
         
-        //let setToNothing = SKAction.scaleTo(0.0, duration: 0.0)
+        // Animation
         button.setScale(0)
         let pulse = SKAction.scaleTo(1.0, duration: 5, delay: 0.5, usingSpringWithDamping: 0.2, initialSpringVelocity: 0)
-        //let pulseDown = SKAction.scaleTo(1.0, duration: 1.0)
-        //let pulse = SKAction.sequence([pulseUp, pulseDown])
-        //let repeatPulse = SKAction.repeatActionForever(pulse)
-        //self.playButton.runAction(repeatPulse)
         button.runAction(pulse)
     }
 }
