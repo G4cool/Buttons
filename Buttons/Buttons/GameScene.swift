@@ -165,6 +165,12 @@ class GameScene: SKScene {
         } else {
             randFillRedCorrect = randFillRed - 100
         }
+        
+        if randFillRed < 1 {
+            randStrokeRed = randFillRed + 1
+        } else {
+            randStrokeRed = randFillRed - 1
+        }
     }
     
     func addButton(buttonCount: Int, buttonTotal: Int, rand: CGFloat, randFillRedCorrect: CGFloat, randFillRed: CGFloat, randFillGreen: CGFloat, randFillBlue: CGFloat, randStrokeRed: CGFloat, randStrokeGreen: CGFloat, randStrokeBlue: CGFloat) {
