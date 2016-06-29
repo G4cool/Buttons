@@ -265,12 +265,16 @@ class GameScene: SKScene {
         addChild(button)
         
         // Animation
-        var xCenter = size.width/2
-        var yCenter = size.height/2
-        var xDistFromCenter = abs(xCenter - buttonX)
-        var yDistFromCenter = abs(yCenter - buttonY)
+        let xCenter = size.width/2
+        let yCenter = size.height/2
+        let xDistFromCenter = xCenter - buttonX
+        let yDistFromCenter = yCenter - buttonY
+        let distFromCenter = sqrt((xDistFromCenter)*(xDistFromCenter) + (yDistFromCenter)*(yDistFromCenter))
+        // Using xCenter and yCenter because the distance is the same as the farthest distance
+        let farthestDist = sqrt((xCenter)*(xCenter) + (yCenter)*(yCenter))
+        let delayCustom = Double(distFromCenter/farthestDist)
         button.setScale(0)
-        let pulse = SKAction.scaleTo(1.0, duration: 5, delay: 0.5, usingSpringWithDamping: 0.2, initialSpringVelocity: 0)
+        let pulse = SKAction.scaleTo(1.0, duration: 5, delay: delayCustom, usingSpringWithDamping: 0.2, initialSpringVelocity: 0)
         button.runAction(pulse)
     }
 }
