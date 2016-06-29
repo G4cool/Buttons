@@ -12,7 +12,7 @@ import Foundation
 
 class GameScene: SKScene {
     
-    var buttonTotal = 1
+    var buttonTotal = 200
     var buttonCount = 1
     var shapeNodes : [SKShapeNode] = []
     var correct = false
@@ -76,11 +76,11 @@ class GameScene: SKScene {
                 // Change color of SKShapeNodes
                 for node in shapeNodes {
                     if (node.name == "good") {
-                        node.fillColor = UIColor(red: 11/255, green: 1, blue: 0, alpha: 1)
-                        node.strokeColor = UIColor(red: 7/255, green: 178/225, blue: 0, alpha: 1)
+                        node.fillColor = UIColor(red: 20/255, green: 204/255, blue: 10/255, alpha: 1)
+                        node.strokeColor = UIColor(red: 61/255, green: 153/225, blue: 106/255, alpha: 1)
                     } else {
-                        node.fillColor = UIColor(red: 1, green: 10/255, blue: 0, alpha: 1)
-                        node.strokeColor = UIColor(red: 178/255, green: 7/225, blue: 0, alpha: 1)
+                        node.fillColor = UIColor(red: 204/255, green: 44/255, blue: 20/255, alpha: 1)
+                        node.strokeColor = UIColor(red: 153/255, green: 73/225, blue: 61/255, alpha: 1)
                     }
                 }
             
@@ -201,6 +201,10 @@ class GameScene: SKScene {
                     //break
                 }
             }
+        }
+        
+        while (buttonTotal + 1)/mod > 16 { // Decrease the left side of inequality to increase rows (mod)
+            mod += 1
         }
         
         // Create a button
