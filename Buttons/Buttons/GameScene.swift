@@ -209,6 +209,8 @@ class GameScene: SKScene {
             }
         } else if yDist < radius {
             radius = yDist
+        } else {
+            radius = distance/2 - 4
         }
         /*
         let xRad = (size.width/CGFloat(buttonTotal + 1))
@@ -258,7 +260,7 @@ class GameScene: SKScene {
         
         //let setToNothing = SKAction.scaleTo(0.0, duration: 0.0)
         button.setScale(0)
-        let pulse = SKAction.scaleTo(1.1, duration: 5, delay: 0.5, usingSpringWithDamping: 1, initialSpringVelocity: 0)
+        let pulse = SKAction.scaleTo(1.0, duration: 5, delay: 0.5, usingSpringWithDamping: 0.2, initialSpringVelocity: 0)
         //let pulseDown = SKAction.scaleTo(1.0, duration: 1.0)
         //let pulse = SKAction.sequence([pulseUp, pulseDown])
         //let repeatPulse = SKAction.repeatActionForever(pulse)
