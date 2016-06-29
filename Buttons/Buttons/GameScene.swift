@@ -203,6 +203,7 @@ class GameScene: SKScene {
             }
         }
         
+        // Can you just have this loop below and not the calculations for mod above?
         while (buttonTotal + 1)/mod > 16 { // Decrease the left side of inequality to increase rows (mod)
             mod += 1
         }
