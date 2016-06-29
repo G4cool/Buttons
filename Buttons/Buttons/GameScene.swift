@@ -12,7 +12,7 @@ import Foundation
 
 class GameScene: SKScene {
     
-    var buttonTotal = 200
+    var buttonTotal = 1
     var buttonCount = 1
     var shapeNodes : [SKShapeNode] = []
     var correct = false
