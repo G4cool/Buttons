@@ -233,6 +233,7 @@ class GameScene: SKScene {
         // Created rounded corners and position button
         if (buttonTotal != 1) && (mod == 1) {
             button.position = CGPointMake((size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1)), ((size.height * (((CGFloat(buttonCount) + 1) % CGFloat(2)) + 1))/CGFloat(2 + 1)))
+            //var buttonX = (size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1))
         } else {
             button.position = CGPointMake((size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1)), ((size.height * (((CGFloat(buttonCount) + 1) % CGFloat(mod)) + 1))/CGFloat(mod + 1)))
         }
@@ -259,6 +260,9 @@ class GameScene: SKScene {
         addChild(button)
         
         // Animation
+        var xCenter = size.width/2
+        var yCenter = size.height/2
+        var xDistFromCenter =
         button.setScale(0)
         let pulse = SKAction.scaleTo(1.0, duration: 5, delay: 0.5, usingSpringWithDamping: 0.2, initialSpringVelocity: 0)
         button.runAction(pulse)
