@@ -8,6 +8,7 @@
 
 import SpriteKit
 import Foundation
+//import SpriteKit_Spring
 
 class GameScene: SKScene {
     
@@ -255,10 +256,11 @@ class GameScene: SKScene {
         shapeNodes.append(button)
         addChild(button)
         
-        let setToNothing = SKAction.scaleTo(0.0, duration: 0.0)
-        let pulseUp = SKAction.scaleTo(1.1, duration: 0.2)
-        let pulseDown = SKAction.scaleTo(1.0, duration: 1.0)
-        let pulse = SKAction.sequence([setToNothing, pulseUp, pulseDown])
+        //let setToNothing = SKAction.scaleTo(0.0, duration: 0.0)
+        button.setScale(0)
+        let pulse = SKAction.scaleTo(1.1, duration: 5, delay: 0.5, usingSpringWithDamping: 1, initialSpringVelocity: 0)
+        //let pulseDown = SKAction.scaleTo(1.0, duration: 1.0)
+        //let pulse = SKAction.sequence([pulseUp, pulseDown])
         //let repeatPulse = SKAction.repeatActionForever(pulse)
         //self.playButton.runAction(repeatPulse)
         button.runAction(pulse)

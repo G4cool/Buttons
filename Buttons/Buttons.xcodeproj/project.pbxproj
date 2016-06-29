@@ -17,7 +17,7 @@
 		8162C4401CAAC4DF00735CFF /* ButtonsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162C43F1CAAC4DF00735CFF /* ButtonsUITests.swift */; };
 		8162C4521CAAC80D00735CFF /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8162C4511CAAC80D00735CFF /* sprites.atlas */; };
 		8162C4561CAAC83C00735CFF /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 8162C4551CAAC83C00735CFF /* Sounds */; };
-		8184CDCE1D24183B00EEBF4D /* SpriteKit-Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8184CDCD1D24183B00EEBF4D /* SpriteKit-Spring.swift */; };
+		8184CDD01D241B1C00EEBF4D /* SpriteKit-Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8184CDCF1D241B1C00EEBF4D /* SpriteKit-Spring.swift */; };
 		81C1A3C21CB0756F00E78AA9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1A3C11CB0756F00E78AA9 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		8162C4411CAAC4DF00735CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8162C4511CAAC80D00735CFF /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		8162C4551CAAC83C00735CFF /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
-		8184CDCD1D24183B00EEBF4D /* SpriteKit-Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpriteKit-Spring.swift"; sourceTree = "<group>"; };
+		8184CDCF1D241B1C00EEBF4D /* SpriteKit-Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpriteKit-Spring.swift"; sourceTree = "<group>"; };
 		81C1A3C11CB0756F00E78AA9 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +110,7 @@
 				8162C41B1CAAC4DF00735CFF /* AppDelegate.swift */,
 				81C1A3C11CB0756F00E78AA9 /* MenuViewController.swift */,
 				8162C41F1CAAC4DF00735CFF /* GameScene.swift */,
-				8184CDCD1D24183B00EEBF4D /* SpriteKit-Spring.swift */,
+				8184CDCF1D241B1C00EEBF4D /* SpriteKit-Spring.swift */,
 				8162C4211CAAC4DF00735CFF /* GameViewController.swift */,
 				8162C4231CAAC4DF00735CFF /* Main.storyboard */,
 				8162C4261CAAC4DF00735CFF /* Assets.xcassets */,
@@ -277,7 +277,7 @@
 				8162C4221CAAC4DF00735CFF /* GameViewController.swift in Sources */,
 				8162C41C1CAAC4DF00735CFF /* AppDelegate.swift in Sources */,
 				81C1A3C21CB0756F00E78AA9 /* MenuViewController.swift in Sources */,
-				8184CDCE1D24183B00EEBF4D /* SpriteKit-Spring.swift in Sources */,
+				8184CDD01D241B1C00EEBF4D /* SpriteKit-Spring.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
