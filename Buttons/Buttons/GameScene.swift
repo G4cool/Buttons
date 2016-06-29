@@ -255,5 +255,12 @@ class GameScene: SKScene {
         shapeNodes.append(button)
         addChild(button)
         
+        let setToNothing = SKAction.scaleTo(0.0, duration: 0.0)
+        let pulseUp = SKAction.scaleTo(1.1, duration: 0.5)
+        let pulseDown = SKAction.scaleTo(1.0, duration: 1.0)
+        let pulse = SKAction.sequence([pulseUp, pulseDown])
+        //let repeatPulse = SKAction.repeatActionForever(pulse)
+        //self.playButton.runAction(repeatPulse)
+        button.runAction(pulse)
     }
 }
