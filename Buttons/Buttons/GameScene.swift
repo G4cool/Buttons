@@ -166,10 +166,16 @@ class GameScene: SKScene {
             randFillRedCorrect = randFillRed - 100
         }
         
-        if randFillRed < 1 {
-            randStrokeRed = randFillRed + 1
-        } else {
-            randStrokeRed = randFillRed - 1
+        if randFillRed > 0 {
+            randStrokeRed = randFillRed - 15
+        }
+        
+        if randFillGreen > 0 {
+            randStrokeGreen = randFillGreen - 15
+        }
+        
+        if randFillBlue > 0 {
+            randStrokeBlue = randFillBlue - 15
         }
     }
     
