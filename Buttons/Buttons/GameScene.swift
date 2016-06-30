@@ -187,23 +187,6 @@ class GameScene: SKScene {
         let customStrokeColor = UIColor(red: CGFloat(randStrokeRed/255), green: CGFloat(randStrokeGreen/255), blue: CGFloat(randStrokeBlue/255), alpha: 1)
         
         // Get mod (number of rows)
-        if buttonTotal <= 24 {
-            for i in 1...Int(sqrt(Double(buttonTotal))) {
-                if (i != 1) && (buttonTotal % i == 0) {
-                    mod = i
-                    //break
-                }
-            }
-        } else {
-            for i in 1...5 {
-                if (i != 1) && (buttonTotal % i == 0) {
-                    mod = i
-                    //break
-                }
-            }
-        }
-        
-        // Can you just have this loop below and not the calculations for mod above?
         while (buttonTotal + 1)/mod > 16 { // Decrease the left side of inequality to increase rows (mod)
             mod += 1
         }
