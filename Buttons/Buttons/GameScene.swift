@@ -95,7 +95,7 @@ class GameScene: SKScene {
         
         if touchedNothing == false {
             // Delay (for now, change later)
-            sleep(1)
+            //sleep(1)
             
             // Remove the SKShapeNodes
             removeNodes()
