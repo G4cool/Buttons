@@ -11,13 +11,13 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     
-    var SwiftTimer = NSTimer()
+    var SwiftTimer = Timer()
     var SwiftCounter = 0
     
     // Add the timer label
     @IBOutlet weak var timer: UILabel!
-    func startTimer(sender: AnyObject) {
-        _ = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: #selector(GameViewController.updateCounter), userInfo: nil, repeats: true)
+    func startTimer(_ sender: AnyObject) {
+        _ = Timer.scheduledTimer(timeInterval: 1, target:self, selector: #selector(GameViewController.updateCounter), userInfo: nil, repeats: true)
     }
     
     override func viewDidLoad() {
@@ -27,11 +27,11 @@ class GameViewController: UIViewController {
         skView.showsFPS = true
         skView.showsNodeCount = true
         skView.ignoresSiblingOrder = true
-        scene.scaleMode = .ResizeFill
+        scene.scaleMode = .resizeFill
         skView.presentScene(scene)
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     

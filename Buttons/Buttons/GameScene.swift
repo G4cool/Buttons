@@ -28,12 +28,12 @@ class GameScene: SKScene {
     var touchedNothing = true
     var mod = 1
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         
         // Randomly generate number for picking which button is good
         rand = randRange(1, upper: buttonTotal)
         
-        backgroundColor = SKColor.whiteColor()
+        backgroundColor = SKColor.white
         
         
         if needDelete == false {
@@ -50,14 +50,14 @@ class GameScene: SKScene {
         }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         // Check if valid
         if guessed == false {
             // Identify touch
             for touch: AnyObject in touches {
-                let location = touch.locationInNode(self)
-                let touchedNode = self.nodeAtPoint(location)
+                let location = touch.location(in: self)
+                let touchedNode = self.atPoint(location)
                 
                 if touchedNode.name == "good" {
                     correct = true
@@ -91,7 +91,7 @@ class GameScene: SKScene {
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if touchedNothing == false {
             // Delay (for now, change later)
@@ -108,7 +108,7 @@ class GameScene: SKScene {
                 
                 // Start the timer
                 _ = buttonTotal
-                _ = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: #selector(GameScene.updateCounter), userInfo: nil, repeats: true)
+                _ = Timer.scheduledTimer(timeInterval: 1, target:self, selector: #selector(GameScene.updateCounter), userInfo: nil, repeats: true)
                 
                 for _ in 1...buttonTotal {
                     addButton((buttonCount - 1), buttonTotal: buttonTotal, rand: CGFloat(rand), randFillRedCorrect: randFillRedCorrect, randFillRed: randFillRed, randFillGreen: randFillGreen, randFillBlue: randFillBlue, randStrokeRed: randStrokeRed, randStrokeGreen: randStrokeGreen, randStrokeBlue: randStrokeBlue)
@@ -143,11 +143,11 @@ class GameScene: SKScene {
         return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
     }
     
-    func random(min min: CGFloat, max: CGFloat) -> CGFloat {
+    func random(min: CGFloat, max: CGFloat) -> CGFloat {
         return random() * (max - min) + min
     }
     
-    func randRange (lower: Int , upper: Int) -> Int {
+    func randRange (_ lower: Int , upper: Int) -> Int {
         return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
     }
     
@@ -178,7 +178,7 @@ class GameScene: SKScene {
         }
     }
     
-    func addButton(buttonCount: Int, buttonTotal: Int, rand: CGFloat, randFillRedCorrect: CGFloat, randFillRed: CGFloat, randFillGreen: CGFloat, randFillBlue: CGFloat, randStrokeRed: CGFloat, randStrokeGreen: CGFloat, randStrokeBlue: CGFloat) {
+    func addButton(_ buttonCount: Int, buttonTotal: Int, rand: CGFloat, randFillRedCorrect: CGFloat, randFillRed: CGFloat, randFillGreen: CGFloat, randFillBlue: CGFloat, randStrokeRed: CGFloat, randStrokeGreen: CGFloat, randStrokeBlue: CGFloat) {
         
         // Create color
         let customFillColor = UIColor(red: CGFloat(randFillRed/255), green: CGFloat(randFillGreen/255), blue: CGFloat(randFillBlue/255), alpha: 1)
@@ -217,13 +217,13 @@ class GameScene: SKScene {
         
         // Created rounded corners and position button
         if (buttonTotal != 1) && (mod == 1) {
-            button.position = CGPointMake((size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1)), ((size.height * (((CGFloat(buttonCount) + 1) % CGFloat(2)) + 1))/CGFloat(2 + 1)))
+            button.position = CGPoint(x: (size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1)), y: ((size.height * (((CGFloat(buttonCount) + 1).truncatingRemainder(dividingBy: CGFloat(2))) + 1))/CGFloat(2 + 1)))
             buttonX = (size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1))
-            buttonY = ((size.height * (((CGFloat(buttonCount) + 1) % CGFloat(2)) + 1))/CGFloat(2 + 1))
+            buttonY = ((size.height * (((CGFloat(buttonCount) + 1).truncatingRemainder(dividingBy: CGFloat(2))) + 1))/CGFloat(2 + 1))
         } else {
-            button.position = CGPointMake((size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1)), ((size.height * (((CGFloat(buttonCount) + 1) % CGFloat(mod)) + 1))/CGFloat(mod + 1)))
+            button.position = CGPoint(x: (size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1)), y: ((size.height * (((CGFloat(buttonCount) + 1).truncatingRemainder(dividingBy: CGFloat(mod))) + 1))/CGFloat(mod + 1)))
             buttonX = (size.width/CGFloat(buttonTotal + 1) * CGFloat(buttonCount + 1))
-            buttonY = ((size.height * (((CGFloat(buttonCount) + 1) % CGFloat(mod)) + 1))/CGFloat(mod + 1))
+            buttonY = ((size.height * (((CGFloat(buttonCount) + 1).truncatingRemainder(dividingBy: CGFloat(mod))) + 1))/CGFloat(mod + 1))
         }
         
         // Define some properties
@@ -232,7 +232,7 @@ class GameScene: SKScene {
         } else {
             button.name = "bad"
         }
-        button.userInteractionEnabled = false
+        button.isUserInteractionEnabled = false
         
         // Coloring and design
         if button.name == "good" {
@@ -258,6 +258,6 @@ class GameScene: SKScene {
         let delayCustom = Double(distFromCenter/farthestDist)
         button.setScale(0)
         let pulse = SKAction.scaleTo(1.0, duration: 5, delay: delayCustom, usingSpringWithDamping: 0.2, initialSpringVelocity: 0)
-        button.runAction(pulse)
+        button.run(pulse)
     }
 }

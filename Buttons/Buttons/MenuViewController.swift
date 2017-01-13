@@ -22,12 +22,12 @@ class MenuViewController: UIViewController {
         createPlayButton()
     }
     
-    func buttonAction(sender: UIButton!) {
+    func buttonAction(_ sender: UIButton!) {
         // Recognizing button
         let btnsendtag: UIButton = sender
         if btnsendtag.tag == 1 {
             // Go to GameSceen
-            self.performSegueWithIdentifier("toGameView", sender: self)
+            self.performSegue(withIdentifier: "toGameView", sender: self)
         }
     }
     
@@ -35,14 +35,14 @@ class MenuViewController: UIViewController {
         
         // Create colors
         let customFillColor = UIColor(red: 1, green: 108/255, blue: 0, alpha: 1)
-        let customBorderColor = UIColor(red: 178/255, green: 75/255, blue: 0, alpha: 1).CGColor
+        let customBorderColor = UIColor(red: 178/255, green: 75/255, blue: 0, alpha: 1).cgColor
         let customTintColor = UIColor(red: 0, green: 96/255, blue: 1, alpha: 1)
         
         // Create a button
-        let button = UIButton(type: UIButtonType.System) as UIButton
+        let button = UIButton(type: UIButtonType.system) as UIButton
         
         // Created rounded corners and position button
-        button.frame = CGRectMake(view.bounds.width/4, view.bounds.height/2, view.bounds.width/2, 50)
+        button.frame = CGRect(x: view.bounds.width/4, y: view.bounds.height/2, width: view.bounds.width/2, height: 50)
         button.layer.cornerRadius = 4
      
         // Coloring and design
@@ -52,8 +52,8 @@ class MenuViewController: UIViewController {
         button.tintColor = customTintColor
         
         // Define some properties
-        button.setTitle("Play", forState: UIControlState.Normal)
-        button.addTarget(self, action: #selector(MenuViewController.buttonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        button.setTitle("Play", for: UIControlState())
+        button.addTarget(self, action: #selector(MenuViewController.buttonAction(_:)), for: UIControlEvents.touchUpInside)
         button.tag = 1
         
         // Add the button to the array and to the scene

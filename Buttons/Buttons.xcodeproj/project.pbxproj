@@ -208,13 +208,16 @@
 				TargetAttributes = {
 					8162C4171CAAC4DE00735CFF = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 					};
 					8162C42F1CAAC4DF00735CFF = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 						TestTargetID = 8162C4171CAAC4DE00735CFF;
 					};
 					8162C43A1CAAC4DF00735CFF = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 						TestTargetID = 8162C4171CAAC4DE00735CFF;
 					};
 				};
@@ -423,6 +426,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spaceink.Buttons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -434,6 +438,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spaceink.Buttons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -446,6 +451,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spaceink.ButtonsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Buttons.app/Buttons";
 			};
 			name = Debug;
@@ -458,6 +464,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spaceink.ButtonsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Buttons.app/Buttons";
 			};
 			name = Release;
@@ -470,6 +477,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spaceink.ButtonsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Buttons;
 			};
 			name = Debug;
@@ -481,6 +489,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spaceink.ButtonsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Buttons;
 			};
 			name = Release;
